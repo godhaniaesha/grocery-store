@@ -9,6 +9,7 @@ import PopularCategories from './container/PopularCategories';
 import FirstSlider from './container/FirstSlider';
 import SingleCard from './container/SingleCard';
 import Menuheader from './components/Menuheader';
+import Testimonial from './container/Testimonial';
 
 function App() {
   return (
@@ -16,6 +17,8 @@ function App() {
       <Routes>
           <Route path="*" element={<Home />} />
           <Route path="/Menuheader" element={<Menuheader />} />
+          <Route path="/Testimonial" element={<Testimonial />} />
+
           <Route path="/HomeMain" element={<HomeMain />} />
           <Route path="/Searchheader" element={<SearchHeader />} />
           <Route path="/PopularCategories" element={<PopularCategories />} />
