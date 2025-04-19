@@ -6,6 +6,8 @@ import Home from './components/home';
 import HomeMain from './container/HomeMain';
 import SearchHeader from './container/SearchHeader';
 import PopularCategories from './container/PopularCategories';
+import FirstSlider from './container/FirstSlider';
+import SingleCard from './container/SingleCard';
 
 function App() {
   return (
@@ -15,6 +17,8 @@ function App() {
           <Route path="/HomeMain" element={<HomeMain />} />
           <Route path="/Searchheader" element={<SearchHeader />} />
           <Route path="/PopularCategories" element={<PopularCategories />} />
+          <Route path="/Firstslider" element={<FirstSlider />} />
+          <Route path="/Singlecard" element={<SingleCard />} />
       </Routes>
     </BrowserRouter>
   );
