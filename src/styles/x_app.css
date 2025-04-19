@@ -1,3 +1,314 @@
-body {
-    margin: 0%;
+/* Menuheader start */
+.x_navbar {
+    background: #fff;
+    padding: 10px 20px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    position: relative;
+}
+
+.x_nav_container {
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+}
+
+.x_sticky_category {
+    position: sticky;
+    left: 0;
+    background: #fff;
+    z-index: 2;
+    padding-right: 15px;
+    border-right: 1px solid #eee;
+}
+
+.x_nav_list {
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding-left: 15px;
+    overflow-x: auto;
+    white-space: nowrap;
+    -webkit-overflow-scrolling: touch;
+}
+
+.x_nav_item {
+    padding: 0px 16px 5px 16px;
+    cursor: pointer;
+    font-size: 14px;
+    color: #333;
+    transition: all 0.3s ease;
+}
+
+.x_nav_item:hover {
+    color: #2c6145;
+}
+
+.x_active {
+    color: #2c6145;
+    font-weight: 600;
+}
+
+.x_menu_btn {
+    display: none;
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+.x_offcanvas {
+    position: fixed;
+    top: 0;
+    left: -280px;
+    height: 100vh;
+    width: 280px;
+    background: #fff;
+    box-shadow: 2px 0 4px rgba(0,0,0,0.1);
+    transition: all 0.3s ease;
+    z-index: 1000;
+}
+
+.x_offcanvas.x_open {
+    left: 0;
+}
+
+.x_close_btn {
+    position: absolute;
+    right: 10px;
+    top: 10px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 8px;
+}
+
+.x_offcanvas_list {
+    list-style: none;
+    padding: 20px 0;
+    margin: 0;
+}
+
+.x_offcanvas_list .x_nav_item {
+    padding: 12px 20px;
+    display: block;
+}
+
+@media (max-width: 768px) {
+    .x_nav_list {
+        display: none;
+    }    
+    .x_menu_btn {
+        display: block;
+    }
+    .x_nav_container{
+        display: none;
+    }
+}  
+  /* Menuheader end */
+
+/* Add these new styles to your existing CSS */
+
+.x_nav_item_content {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.x_arrow {
+    transition: transform 0.3s ease;
+}
+
+.x_arrow_up {
+    transform: rotate(180deg);
+}
+
+/* Add these new styles for the mega dropdown */
+.x_mega_dropdown {
+    position: absolute;
+    top: 100%;
+    left: 9%;
+    background: white;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    border-radius: 4px;
+    padding: 20px;
+    z-index: 1000;
+    /* width: 100rem; */
+    max-width: 100rem;
+    display: flex;
+    /* grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); */
+    gap: 24px;
+    overflow-x: scroll;
+    max-height: 80vh;
+    overflow-y: auto;
+    scrollbar-width: thin;
+    scrollbar-color: #d0d0d0 #f1f1f1;
+}
+
+/* customize scroll start */
+.x_mega_dropdown::-webkit-scrollbar {
+    width: 8px;
+}
+
+.x_mega_dropdown::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 4px;
+}
+
+.x_mega_dropdown::-webkit-scrollbar-thumb {
+    background: #d0d0d0;
+    border-radius: 4px;
+}
+
+.x_mega_dropdown::-webkit-scrollbar-thumb:hover {
+    background: #551672;
+}
+/* customize scroll end */
+
+.x_dropdown_section {
+    padding: 0 15px;
+}
+
+.x_dropdown_title {
+    color: #6b1d89;
+    font-size: 15px;
+    font-weight: 600;
+    margin-bottom: 12px;
+    padding-bottom: 8px;
+    border-bottom: 1px solid #eee;
+}
+
+.x_dropdown_list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.x_dropdown_item {
+    padding: 6px 0;
+    color: #333;
+    font-size: 14px;
+    cursor: pointer;
+    transition: color 0.2s ease;
+}
+
+.x_dropdown_item:hover {
+    color: #6b1d89;
+}
+
+.x_nav_item_content {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.x_arrow {
+    font-size: 16px;
+    transition: transform 0.3s ease;
+}
+
+.x_arrow_up {
+    transform: rotate(180deg);
+}
+
+/* Mobile styles for dropdown */
+.x_offcanvas .x_mega_dropdown {
+    box-shadow: none;
+    min-width: auto;
+    padding: 10px 0 10px 15px;
+    display: block;
+    border-left: 2px solid #eee;
+    margin: 5px 0 5px 15px;
+}
+
+.x_offcanvas .x_dropdown_section {
+    padding: 0;
+    margin-bottom: 15px;
+}
+
+.x_offcanvas .x_dropdown_title {
+    font-size: 14px;
+    padding-bottom: 5px;
+}
+
+.x_offcanvas .x_dropdown_item {
+    font-size: 13px;
+    padding: 4px 0;
+}
+
+/* First menu item (Foodgrain, Oil & Masala) */
+.x_nav_item[data-category="Foodgrain, Oil & Masala"]:hover,
+.x_nav_item[data-category="Foodgrain, Oil & Masala"].x_active {
+    background-color: #73953f;
+    color: #fff;
+}
+
+/* Second menu item (Fruits & Vegetables) */
+.x_nav_item[data-category="Fruits & Vegetables"]:hover,
+.x_nav_item[data-category="Fruits & Vegetables"].x_active {
+    background-color: #85c0fb;
+    color: #fff;
+}
+
+/* Third menu item (Dairy & Bakery) */
+.x_nav_item[data-category="Dairy & Bakery"]:hover,
+.x_nav_item[data-category="Dairy & Bakery"].x_active {
+    background-color: #b2d61f;
+    color: #fff;
+}
+
+/* Fourth menu item (Home Care) */
+.x_nav_item[data-category="Home Care"]:hover,
+.x_nav_item[data-category="Home Care"].x_active {
+    background-color: #feb82a;
+    color: #fff;
+}
+
+/* Fifth menu item (Branded Food) */
+.x_nav_item[data-category="Branded Food"]:hover,
+.x_nav_item[data-category="Branded Food"].x_active {
+    background-color: #cc81e6;
+    color: #fff;
+}
+
+/* Sixth menu item (Beverages) */
+.x_nav_item[data-category="Beverages"]:hover,
+.x_nav_item[data-category="Beverages"].x_active {
+    background-color: #fe923b;
+    color: #fff;
+}
+
+/* Seventh menu item (Frozen) */
+.x_nav_item[data-category="Frozen"]:hover,
+.x_nav_item[data-category="Frozen"].x_active {
+    background-color: #bb4961;
+    color: #fff;
+}
+
+
+
+.x_nav_item[data-category="Foodgrain, Oil & Masala"] .x_dropdown_title {
+    color: #73953f;
+}
+
+.x_nav_item[data-category="Fruits & Vegetables"] .x_dropdown_title {
+    color: #85c0fb;
+}
+
+.x_nav_item[data-category="Dairy & Bakery"] .x_dropdown_title {
+    color: #b2d61f;
+}
+
+.x_nav_item[data-category="Home Care"] .x_dropdown_title {
+    color: #feb82a;
+}
+
+.x_nav_item[data-category="Branded Food"] .x_dropdown_title {
+    color: #cc81e6;
+}
+
+.x_nav_item[data-category="Beverages"] .x_dropdown_title {
+    color: #fe923b;
+}
+
+.x_nav_item[data-category="Frozen"] .x_dropdown_title {
+    color: #bb4961;
 }
