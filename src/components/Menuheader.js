@@ -8,6 +8,7 @@ function Menuheader(props) {
     const [open, setOpen] = useState(false);
     const [active, setActive] = useState("All Categories");
     const [showDropdown, setShowDropdown] = useState(null);
+   
     const dropdownRef = useRef(null);
 
     useEffect(() => {
@@ -25,296 +26,400 @@ function Menuheader(props) {
     }, []);
 
     const menuData = {
-        "Foodgrain, Oil & Masala": {
-            "Whole Pulses": ["Minor Dals"],
-            "Masala": [
-                "Whole Spices",
-                "Powder Spices",
-                "Blended Spices",
-                "Hing",
-                "Cooking Pastes",
-                "Herbs & Seasonings",
-                "Food Colour & Flavours"
+        "Grains & Pulses": {
+            "Whole Pulses": [
+                "Moong Whole",
+                "Chana Whole",
+                "Urad Whole",
+                "Masoor Whole",
+                "Rajma",
+                "Kabuli Chana"
             ],
+            "Split Pulses": [
+                "Moong Dal",
+                "Chana Dal",
+                "Toor Dal (Arhar)",
+                "Urad Dal",
+                "Masoor Dal"
+            ],
+            "Organic Pulses": [
+                "Organic Moong Dal",
+                "Organic Chana Dal",
+                "Organic Toor Dal",
+                "Organic Masoor Dal"
+            ],
+            "Other Pulses": [
+                "Horse Gram",
+                "Lobia (Black Eyed Beans)",
+                "Soybean",
+                "Green Peas",
+                "Black Chickpeas"
+            ],
+            "Grains": [
+                "Wheat",
+                "Rice",
+                "Jowar",
+                "Bajra",
+                "Ragi",
+                "Barley"
+            ],
+            "Organic Grains": [
+                "Organic Wheat",
+                "Organic Rice",
+                "Organic Bajra",
+                "Organic Jowar"
+            ],
+            "Ready to Cook Pulses": [
+                "Sprouted Pulses Mix",
+                "Soaked & Packed Pulses"
+            ]
+        },
+        "Oil & Ghee": {
             "Ghee": [
                 "Cow Ghee",
                 "Desi Ghee"
             ],
             "Oil": [
-                "Coconut Oil",
                 "Sunflower Oil",
-                "Ghee",
                 "Coconut Oil",
-                "Sunflower Oil",
-                "Ghee"
+                "Groundnut Oil",
+                "Soyabean Oil",
+                "Rice Bran Oil",
+                "Mustard Oil",
+                "Olive Oil",
+                "Canola Oil",
+                "Blended Oil",
+                "Sesame Oil",
+                "Corn Oil"
             ],
-           "Sugar": [
-                "Crystal Sugar",
-                "Brown & Value Added Sugar"
+            "Vanaspati & Dalda": [
+                "Vanaspati",
+                "Dalda"
             ],
-            "Split Pulses": [
-                "Arhar",
-                "Moong",
-                "Chana",
-                "Urad"
+            "Butter & Cream": [
+                "White Butter",
+                "Table Butter",
+                "Fresh Cream"
             ],
-            "Rice Products": [
-                "Poha & Bhadang",
-                "Saboodana"
+            "Organic Oils": [
+                "Organic Coconut Oil",
+                "Organic Mustard Oil"
             ],
-            "Salt": [
-                "Iodized Salt",
-                "Rock Salt & Other Salt"
-            ],
-            "Atta & Other Flour": [
-                "Atta",
-                "Suji",
-                "Besan",
-                "Other Flour",
-                "Maida",
-                "Multigrain & Sharbati Atta",
-                "Upwaas Atta"
-            ],
-            "Jaggery": [
-                "Gud"
-            ],
-            "Cooking Oil": [
-                "Cooking Oil"
-            ],
-            "Kitchen": [
-                "Kitchen tools",
-                "Storage Containers",
-                "Cookware",
-                "Water Bottles",
-                "Cookers",
-                "Kitchen accessories"
+            "Cooking Sprays": [
+                "Olive Oil Spray",
+                "Butter Spray"
             ]
-
         },
-        "Fruits & Vegetables": {
-            "Fresh Vegetables": [
-                "Onion, Potato & Tomato",
-                "Leafy & Rooty Vegetables",
-                "Cabbage, Cauliflower & Capsicum",
-                "Chilly, Lemon ,Ginger & Garlic",
-                "Gourds",
-                "Beans, Brinjal & Bhindi",
-                "Carrot & Cucumber",
-                "Peas, Corn & Mushrooms",
-                "Tamarind,Coconut & Jackfruits",
-                "Pumpkin & Tropical Vegetables",
-                "Raw Papaya , Banana & Raw Mango"
+        "Spices & Masala": {
+            "Whole Spices": [
+                "Cumin",
+                "Coriander",
+                "Cardamom",
+                "Cloves",
+                "Cinnamon",
+                "Bay Leaves",
+                "Black Pepper"
             ],
-            "Fresh Fruits": [
-                "Melons",
-                "Grapes & Guava",
-                "Exotic Fruits",
-                "Mangoes & Seasonal Fruits",
-                "Bananas",
-                "Apple",
-                "Orange & Kinnow",
-                "Plums,Pears & Pomogranate",
-                "Pine Apple & Papaya",
-                "Sapota & Fresh Dates"
+            "Powder Spices": [
+                "Turmeric Powder",
+                "Red Chilli Powder",
+                "Coriander Powder",
+                "Cumin Powder",
+                "Garam Masala"
             ],
-            "Cuts & Sprouts": [
-                "Sprouts"
+            "Blended Spices": [
+                "Kitchen King Masala",
+                "Sabzi Masala",
+                "Pav Bhaji Masala",
+                "Chhole Masala",
+                "Biryani Masala",
+                "Tea Masala"
+            ],
+            "Hing": [
+                "Compounded Hing",
+                "Raw Hing"
+            ],
+            "Cooking Pastes": [
+                "Ginger Garlic Paste",
+                "Garlic Paste",
+                "Ginger Paste"
+            ],
+            "Herbs & Seasonings": [
+                "Oregano",
+                "Chili Flakes",
+                "Mixed Herbs",
+                "Curry Leaves",
+                "Kasuri Methi"
+            ],
+            "Food Colour & Flavours": [
+                "Food Colour",
+                "Kesar",
+                "Essences",
+                "Flavoring Agents"
             ]
         },
         "Dairy & Bakery": {
-            "Curd, Paneer & Chaas": [
-                "Curd & Yougurt",
-                "Paneer & Tofu",
-                "Chaas & Lassi"
-            ],
-            "Milk, Cream & Sweets": [
-                "Fino & Tetra Pack Milk",
-                "Fresh Milk & Soya Milk",
-                "Cream",
+            "Dairy": [
+                "Milk",
+                "Curd",
+                "Paneer",
+                "Butter",
+                "Cheese",
                 "Flavoured Milk",
-                "Desserts"
+                "Cream",
+                "Buttermilk & Lassi",
+                "Condensed, Powdered Milk"
             ],
-            "Butter & Margarine": [
-                "Table Butter",
-                "Margarine"
+            "Bakery": [
+                "Bread",
+                "Buns & Pav",
+                "Pizza Base & Kulcha",
+                "Cake",
+                "Pastries",
+                "Brownie",
+                "Donuts"
             ],
-            "Cheese": [
-                "Cheese Cubes",
-                "Cheese Slice",
-                "Cheese Spread"
-            ],
-            "Fresh Baked & Batter": [
-                "Breads",
-                "Batter",
-                "Speciality Breads"
-            ]
-        },
-        "Home Care": {
-            "Cleaners": [
-                "Utensil Cleaner Bar",
-                "Toilet Cleaners",
-                "Floor Cleaners",
-                "Utensil Cleaner Gel",
-                "Dusters, Scrubs And Wipes",
-                "Kitchen & Glass Cleaners",
-                "Brooms & Brushes"
-            ],
-            "Fabric Care": [
-                "Bucket Wash Detergent",
-                "Blue,Fabric Conditioner & Whitner",
-                "Detergent Bar",
-                "Top Load Detergent Liquid",
-                "Front Load Detergent Liquid",
-                "Top Load Detergent Powder",
-                "Front Load Detergent Powder"
-            ],
-            "Paper Products & Disposables": [
-                "Hand Tissue",
-                "Disposable Dining",
-                "Toilet Tissue",
-                "Face Tissue"
-            ],
-            "Pooja Needs": [
-                "Dhoop,Agarbatti & Pooja Oil",
-                "Other Pooja Needs"
-            ],
-            "Repellents": [
-                "Spray (Aerosol)",
-                "Machine & Refill",
-                "Creams & Other"
-            ],
-            "Fresheners": [
-                "Solid Freshners",
-                "Gel Freshners",
-                "Air Fresheners Spray",
-                "Car Freshners"
-            ],
-            "Shoe Care": [
-                "Liquid Polish",
-                "Wax Polish",
-                "Shoe Brush & Acessories"
-            ]
-        },
-        "Branded Food": {
-            "Wafers & Namkeens": [
-                "Namkeens",
-                "Nuts & Other Snacks",
-                "Potato Wafers & Chips",
-                "Chikkis",
-                "Health Snacks",
-                "Gift Packs"
-            ],
-            "Biscuits & Cookies": [
-                "Cream Biscuits",
+            "Cookies & Rusk": [
                 "Cookies",
-                "Plain Biscuits",
-                "Marie Biscuits",
-                "Salted Biscuits",
-                "Health & Wafer Biscuits",
-                "Rusk",
-                "Cakes"
+                "Cream Biscuits",
+                "Glucose & Marie",
+                "Health Biscuits",
+                "Rusk"
             ],
-            "Noodles & Pasta": [
-                "Instant Noodles",
-                "Instant Pasta",
-                "Vermicelli",
-                "Soups"
+            "Bakery Snacks": [
+                "Khari & Toast",
+                "Bakery Namkeen",
+                "Puffs & Rolls"
             ],
-            "Papad & Fryums": [
-                "Papad",
-                "Fryums"
+            "Frozen Desserts": [
+                "Ice Cream",
+                "Kulfi",
+                "Frozen Yogurt"
+            ]
+        },
+        "Fruits & Vegetables": {
+            "Fresh Vegetables": [
+                "Potato",
+                "Onion",
+                "Tomato",
+                "Green Chilli",
+                "Carrot",
+                "Beetroot",
+                "Cucumber",
+                "Lady Finger",
+                "Brinjal",
+                "Bitter Gourd",
+                "Bottle Gourd",
+                "Cabbage",
+                "Cauliflower",
+                "Spinach",
+                "Coriander Leaves",
+                "Drumstick"
             ],
-            "Ready To Eat": ["Sweets"],
-            "Chocolates & Confectionery": [
-                "Block Chocolate",
-                "Toffees & Candies",
-                "Chocolate Coated"
+            "Fresh Fruits": [
+                "Banana",
+                "Apple",
+                "Papaya",
+                "Orange",
+                "Mosambi",
+                "Guava",
+                "Grapes",
+                "Pomegranate",
+                "Watermelon",
+                "Mango",
+                "Chikoo",
+                "Pear",
+                "Kiwi",
+                "Pineapple"
             ],
-            "Sauces & Vinegar": [
-                "Tomato Ketchup",
-                "Vinegar",
-                "Soya , Chilli Sauces",
-                "Other Sauces",
-                "Blended Sauces"
+            "Exotic Vegetables": [
+                "Broccoli",
+                "Zucchini",
+                "Lettuce",
+                "Bell Peppers",
+                "Avocado",
+                "Asparagus",
+                "Celery"
             ],
-            "Mouth Freshners": [
-                "Mukhwas",
-                "Gum & Mints"
+            "Organic Vegetables": [
+                "Organic Tomato",
+                "Organic Carrot",
+                "Organic Potato",
+                "Organic Greens"
+            ],
+            "Organic Fruits": [
+                "Organic Banana",
+                "Organic Apple",
+                "Organic Papaya"
+            ],
+            "Cut & Peeled": [
+                "Cut Fruits",
+                "Cut Vegetables",
+                "Vegetable Mixes"
+            ],
+            "Herbs & Leaves": [
+                "Coriander",
+                "Mint",
+                "Curry Leaves",
+                "Lemongrass",
+                "Tulsi"
+            ],
+            "Sprouts & Microgreens": [
+                "Moong Sprouts",
+                "Mixed Sprouts",
+                "Microgreens"
             ]
         },
         "Beverages": {
-            "Tea": [
-                "Strong Leaf Tea",
+            "Tea & Coffee": [
                 "Green Tea",
-                "Flavoured Tea & Tea Bags",
-                "Flavoury Leaf Tea"
-            ],
-            "Carbonated Soft Drinks": [
-                "Cola",
-                "Orange & Clear",
-                "Sports & Energy Drinks",
-                "Lemon & Cloudy",
-                "Soda & Tonic Water",
-                "Non Alcoholic Beer"
-            ],
-            "Juices": [
-                "Juices (Added Sugar)",
-                "100% Juices",
-                "Just Pressed Juice"
-            ],
-            "Concentrates": [
-                "Drink Mixes & Powder Concentrates",
-                "Squashes"
-            ],
-            "Coffee": [
+                "Black Tea",
+                "Herbal Tea",
+                "Tea Bags",
                 "Instant Coffee",
-                "Filter Coffee"
+                "Ground Coffee",
+                "Coffee Beans"
             ],
-            "Water": [
-                "Mineral Water"
+            "Fruit Juices": [
+                "Orange Juice",
+                "Apple Juice",
+                "Mixed Fruit Juice",
+                "Mango Juice"
             ],
-            "Nutritional Drinks": [
-                "Brown Drink",
-                "White Drink"
+            "Soft Drinks": [
+                "Cola",
+                "Lemon Drink",
+                "Soda",
+                "Tonic Water"
             ],
-            "Whitener": [
-                "Milk Powder"
+            "Energy & Sports Drinks": [
+                "Energy Drinks",
+                "Electrolyte Drinks"
+            ],
+            "Health Drinks & Supplements": [
+                "Protein Powders",
+                "Nutritional Supplements",
+                "Kids Health Drinks"
+            ],
+            "Syrups & Concentrates": [
+                "Rose Syrup",
+                "Lemon Syrup",
+                "Squash & Fruit Concentrates"
+            ],
+            "Flavoured & Packaged Water": [
+                "Flavoured Water",
+                "Mineral Water",
+                "Sparkling Water"
+            ],
+            "Milk Based Drinks": [
+                "Flavoured Milk",
+                "Soy Milk",
+                "Almond Milk"
+            ],
+            "Cold Pressed Juices": [
+                "Cold Pressed Apple Juice",
+                "Cold Pressed Mixed Fruit Juice"
             ]
         },
-        "Frozen": {
-            "Atta & Other Flour": [
-                "Atta",
-                "Suji",
-                "Besan",
-                "Other Flour",
-                "Maida",
-                "Multigrain & Sharbati Atta",
-                "Upwaas Atta"
+        "Snacks & Packaged Foods": {
+            "Chips & Namkeen": [
+                "Potato Chips",
+                "Banana Chips",
+                "Corn Chips",
+                "Masala Snacks",
+                "Namkeen Mix"
             ],
-            "Vegetable": [
-                "Frozen Green Peas",
-                "Frozen Sweet Corn",
-                "Veg Snacks",
-                "Frozen French Fries",
-                "Other Frozen Snacks",
-                "Frozen Stuff & Plain Pratha",
-                "Frozen Burger",
-                "Frozen Nuggets"
+            "Biscuits & Cookies": [
+                "Cream Biscuits",
+                "Crunchy Biscuits",
+                "Cookies",
+                "Gluten-Free Biscuits"
+            ],
+            "Ready to Eat": [
+                "Instant Noodles",
+                "Curry & Rice",
+                "Porridge & Oats",
+                "Pasta"
+            ],
+            "Sweets & Chocolates": [
+                "Candies",
+                "Lollipops",
+                "Milk Sweets",
+                "Chocolate Bars"
+            ],
+            "Dry Fruits & Nuts": [
+                "Almonds",
+                "Cashews",
+                "Raisins",
+                "Pistachios",
+                "Walnuts"
+            ],
+            "Frozen Foods": [
+                "Frozen Vegetables",
+                "Frozen Parathas",
+                "Frozen Snacks"
+            ],
+            "Fruit Juices & Drinks": [
+                "Fruit Juices",
+                "Soft Drinks",
+                "Fruit Pulps"
+            ],
+            "Tea & Coffee": [
+                "Tea",
+                "Green Tea",
+                "Instant Coffee",
+                "Ground Coffee"
+            ],
+            "Pickles & Sauces": [
+                "Mango Pickle",
+                "Mixed Pickles",
+                "Chili Sauce",
+                "Tomato Ketchup"
+            ],
+            "Health Snacks": [
+                "Granola Bars",
+                "Protein Bars",
+                "Seed Mixes",
+                "Dry Fruits"
             ]
         },
     };
 
     const categories = Object.keys(menuData);
 
+    // Replace single count with an object to track counts for each item
+    const [itemCounts, setItemCounts] = useState({});
+
     const handleItemClick = (item) => {
-        if (active === item) {
+        if (item === "All Categories") {
             setActive("All Categories");
             setShowDropdown(null);
+            return;
+        }
+
+        // Get current count for this item (default to 1 if not set)
+        const currentCount = itemCounts[item] || 1;
+
+        if (currentCount % 2 === 0) {
+            // Even count - close dropdown
+            setActive("All Categories");
+            setShowDropdown(null);
+            setItemCounts(prev => ({
+                ...prev,
+                [item]: currentCount - 1
+            }));
         } else {
+            // Odd count - open dropdown
             setActive(item);
             setShowDropdown(item);
+            setItemCounts(prev => ({
+                ...prev,
+                [item]: currentCount + 1
+            }));
         }
     };
+
+
 
     const renderDropdown = (category) => {
         if (!menuData[category]) return null;
@@ -326,8 +431,8 @@ function Menuheader(props) {
                         <h3 className="x_dropdown_title">{title}</h3>
                         <ul className="x_dropdown_list">
                             {items.map((item, index) => (
-                                <li 
-                                    key={index} 
+                                <li
+                                    key={index}
                                     className="x_dropdown_item"
                                     onClick={(e) => {
                                         e.stopPropagation();
@@ -380,24 +485,57 @@ function Menuheader(props) {
                 <button className="x_close_btn" onClick={() => setOpen(false)}>
                     <GrFormClose className='x_active' size={24} />
                 </button>
-                // Also update the mobile menu items
-                <ul className="x_offcanvas_list">
-                    {categories.map((item) => (
-                        <li key={item} className="x_offcanvas_item">
-                            <div 
-                                className={`x_nav_item ${active === item ? "x_active" : ""}`}
-                                data-category={item}
-                                onClick={() => handleItemClick(item)}
-                            >
-                                <div className="x_nav_item_content">
-                                    {item}
-                                    <IoIosArrowDown className={`x_arrow ${showDropdown === item ? 'x_arrow_up' : ''}`} />
-                                </div>
-                            </div>
-                            {showDropdown === item && renderDropdown(item)}
+                <div className="x_offcanvas_content">
+                    <ul className="x_mobile_menu">
+                        <li 
+                            className={`x_mobile_item ${active === "All Categories" ? "x_active" : ""}`}
+                            onClick={() => handleItemClick("All Categories")}
+                        >
+                            All Categories
                         </li>
-                    ))}
-                </ul>
+                        {categories.map((category) => (
+                            // Update the mobile menu click handler
+                            <li 
+                                key={category}
+                                className={`x_mobile_item ${active === category ? "x_active" : ""}`}
+                                onClick={(e) => {
+                                    e.preventDefault();
+                                    e.stopPropagation();
+                                    handleItemClick(category);
+                                }}
+                            >
+                                <div className="x_mobile_item_header">
+                                    {category}
+                                    <IoIosArrowDown className={`x_arrow ${active === category ? "x_arrow_up" : ""}`} />
+                                </div>
+                                {showDropdown === category && (  // Changed this condition
+                                    <div className="x_mobile_submenu">
+                                        {Object.entries(menuData[category]).map(([title, items]) => (
+                                            <div key={title} className="x_mobile_section">
+                                                <h3 className="x_mobile_title">{title}</h3>
+                                                <ul className="x_mobile_list">
+                                                    {items.map((item, index) => (
+                                                        <li
+                                                            key={index}
+                                                            className="x_mobile_subitem"
+                                                            onClick={(e) => {
+                                                                e.stopPropagation();
+                                                                setActive("All Categories");
+                                                                setOpen(false);
+                                                            }}
+                                                        >
+                                                            {item}
+                                                        </li>
+                                                    ))}
+                                                </ul>
+                                            </div>
+                                        ))}
+                                    </div>
+                                )}
+                            </li>
+                        ))}
+                    </ul>
+                </div>
             </div>
         </>
     );
