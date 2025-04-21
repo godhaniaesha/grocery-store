@@ -436,6 +436,7 @@
 
 .x_nav_item[data-category="Snacks & Packaged Foods"] .x_dropdown_title {
     color: #bb4961;
+
 }.x_offcanvas_dropdown {
     padding: 10px;
     background-color: #fff;
@@ -467,3 +468,175 @@
 }
 
 /* Menuheader end */
+
+
+
+
+/* Testimonial styles start */
+.x_testimonial_section {
+    background-color: #f8f9fa;
+    padding: 60px 0;
+  }
+  
+  .x_testimonial_title {
+    font-size: 2.5rem;
+    color: #333;
+    font-weight: 600;
+    margin-bottom: 3rem;
+  }
+  
+  .x_testimonial_card {
+    background: white;
+    border-radius: 8px;
+    padding: 2rem;
+    text-align: center;
+    position: relative;
+    margin-top: 50px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+    transition: all 0.3s ease;
+  }
+  
+  .x_testimonial_image {
+    position: absolute;
+    top: -60px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 90px;
+    height: 90px;
+    border-radius: 50%;
+    overflow: hidden;
+    border: 4px solid white;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+}
+  
+  .x_testimonial_image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  
+  .x_testimonial_content {
+    margin-top: 30px;
+    position: relative;
+  }
+  
+  .x_quote_left,
+  .x_quote_right {
+    font-size: 40px;
+    color: #4a9473;
+    font-family: Georgia, serif;
+    position: absolute;
+    line-height: 1;
+  }
+  
+  .x_quote_left {
+    top: -20px;
+    left: 0;
+  }
+  
+  .x_quote_right {
+    bottom: -30px;
+    right: 0;
+  }
+  
+  .x_testimonial_text {
+    color: #666;
+    font-size: 15px;
+    line-height: 2;
+    margin: 15px 0;
+    padding: 0 30px;
+  }
+  
+  .x_testimonial_name {
+    color: #333;
+    font-size: 16px;
+    font-weight: 600;
+    margin-top: 15px;
+  }
+  
+  /* Swiper custom styles */
+  .x_testimonial_slider {
+    padding: 50px 10px 30px;
+  }
+  
+  .x_testimonial_slider .swiper-slide {
+    opacity: 0.8;
+    transform: scale(0.9);
+    transition: all 0.3s ease;
+  }
+  
+  .x_testimonial_slider .swiper-slide-active {
+    opacity: 1;
+    transform: scale(1.1);
+  }
+  
+  .x_testimonial_slider .swiper-button-next,
+  .x_testimonial_slider .swiper-button-prev {
+    color: #4a9473;
+    width: 40px;
+    height: 40px;
+  }
+  
+  .x_testimonial_slider .swiper-button-next:after,
+  .x_testimonial_slider .swiper-button-prev:after {
+    font-size: 20px;
+  }
+  
+  @media (max-width: 768px) {
+    .x_testimonial_title {
+      font-size: 2rem;
+    }
+    
+    .x_testimonial_card {
+      margin-top: 40px;
+      padding: 1.5rem;
+    }
+    
+    .x_testimonial_text {
+      font-size: 14px;
+      padding: 0 15px;
+    }
+    
+    .x_quote_left,
+    .x_quote_right {
+      font-size: 30px;
+    }
+  }
+  /* Testimonial styles end */
+
+/* Testimonial Header styles */
+.x_testimonial_header {
+  margin-bottom: 50px;
+}
+
+.x_testimonial_subtitle {
+  color: #285641;
+  font-weight: 500;
+  display: block;
+  margin-bottom: 8px;
+  position: relative;
+}
+
+.x_testimonial_subtitle::before,
+.x_testimonial_subtitle::after {
+  content: "—";
+  display: inline-block;
+  margin: 0 10px;
+  color: #285641;
+}
+
+.x_testimonial_title {
+  font-weight: 700;
+  color: #1a1a1a;
+  margin: 0;
+}
+
+@media (max-width: 768px) {
+  .x_testimonial_subtitle {
+    font-size: 16px;
+  }
+  
+  .x_testimonial_title {
+    font-size: 32px;
+  }
+}
