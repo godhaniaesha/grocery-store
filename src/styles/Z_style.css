@@ -840,22 +840,22 @@
 
 
 /* aesha Recommended start  */
-.btn-outline-secondary {
+.x_filter_btn .btn-outline-secondary {
   color: #666;
   border-color: #ddd;
 }
 
-.btn-outline-secondary:hover {
+.x_filter_btn .btn-outline-secondary:hover {
   background-color: #f8f9fa;
   border-color: #666;
   color: #333;
 }
 
-/* .btn {
+.x_filter_btn .btn {
   padding: 6px 20px;
   border-radius: 4px;
   font-size: 14px;
-} */
+}
 /* aesha Recommended end  */
 /* First Card Specific Styles */
 .z_first-card .z_content-area {

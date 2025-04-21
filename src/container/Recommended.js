@@ -139,7 +139,7 @@ function Recommended(props) {
     return (
         <>
             <div className="a_header_container">
-                <div className="d-flex justify-content-between align-items-center mb-4">
+                <div className="d-flex justify-content-between align-items-center x_filter_btn mb-4">
                     <h2 className="mb-0">Recommended For you</h2>
                     <div className="d-flex gap-3">
                         {categories.map((category, index) => (
