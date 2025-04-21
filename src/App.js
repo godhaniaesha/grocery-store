@@ -13,6 +13,7 @@ import AdvertiseCards from './container/AdvertiseCards';
 import Testimonial from './container/Testimonial';
 import Recommended from './container/Recommended';
 import AboutUs from './container/AboutUs';
+import Footer from './container/Footer';
 
 function App() {
   return (
@@ -28,6 +29,7 @@ function App() {
           {/* denisha */}
           <Route path="/Searchheader" element={<SearchHeader />} />
           <Route path="/AboutUs" element={<AboutUs />} />
+          <Route path="/Footer" element={<Footer />} />
           <Route path="/PopularCategories" element={<PopularCategories />} />
 
           {/* krupali */}
