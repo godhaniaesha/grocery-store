@@ -12,6 +12,7 @@ import Menuheader from './components/Menuheader';
 import AdvertiseCards from './container/AdvertiseCards';
 import Testimonial from './container/Testimonial';
 import Recommended from './container/Recommended';
+import AboutUs from './container/AboutUs';
 
 function App() {
   return (
@@ -26,6 +27,7 @@ function App() {
 
           {/* denisha */}
           <Route path="/Searchheader" element={<SearchHeader />} />
+          <Route path="/AboutUs" element={<AboutUs />} />
           <Route path="/PopularCategories" element={<PopularCategories />} />
 
           {/* krupali */}
