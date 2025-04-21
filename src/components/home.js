@@ -4,6 +4,11 @@ import Menuheader from './Menuheader';
 import FirstSlider from '../container/FirstSlider';
 import PopularCategories from '../container/PopularCategories';
 import SingleCard from '../container/SingleCard';
+import AdvertiseCards from '../container/AdvertiseCards';
+import AboutUs from '../container/AboutUs';
+import Footer from '../container/Footer';
+import Recommended from '../container/Recommended';
+import Testimonial from '../container/Testimonial';
 
 function home(props) {
     return (
@@ -13,6 +18,11 @@ function home(props) {
         <FirstSlider></FirstSlider>
         <PopularCategories></PopularCategories>
         <SingleCard></SingleCard>
+        <AdvertiseCards></AdvertiseCards>
+        <Recommended></Recommended>
+        <AboutUs></AboutUs>
+        <Testimonial></Testimonial>
+        <Footer></Footer>
 
         </>
     );
