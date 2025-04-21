@@ -9,6 +9,7 @@ import PopularCategories from './container/PopularCategories';
 import FirstSlider from './container/FirstSlider';
 import SingleCard from './container/SingleCard';
 import Menuheader from './components/Menuheader';
+import AdvertiseCards from './container/AdvertiseCards';
 
 function App() {
   return (
@@ -21,6 +22,7 @@ function App() {
           <Route path="/PopularCategories" element={<PopularCategories />} />
           <Route path="/Firstslider" element={<FirstSlider />} />
           <Route path="/Singlecard" element={<SingleCard />} />
+          <Route path="/Advertisement" element={<AdvertiseCards />} />
       </Routes>
     </BrowserRouter>
   );
