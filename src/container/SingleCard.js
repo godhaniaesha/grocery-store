@@ -6,7 +6,7 @@ import Walnut from '../image/z_accets/Walnuts1.png'
 import Cashews from '../image/z_accets/Cashews3.png';
 import Image from '../image/z_accets/Dates 4.png';
 import '../styles/Z_style.css';
-import { FaShoppingCart, FaHeart, FaEye, FaStar, FaTimes, FaMinus, FaPlus } from 'react-icons/fa';
+import { FaShoppingCart, FaHeart, FaEye, FaStar, FaTimes, FaMinus, FaPlus, FaChevronRight } from 'react-icons/fa';
 
 function SingleCard() {
     const [showModal, setShowModal] = useState(false);
@@ -72,7 +72,7 @@ function SingleCard() {
             originalPrice: 60.00,
             rating: 4.8,
             description: "Premium quality cashew nuts, creamy and delicious. Great source of healthy fats."
-        }
+        },
     ];
 
     const renderStars = (rating) => {
@@ -87,6 +87,16 @@ function SingleCard() {
     return (
         <>
             <div className="container my-5">
+                <div className="d-flex justify-content-between align-items-center mb-4">
+                    <h2 className="z_section-title">
+                        <span className="z_title-highlight">What's</span>
+                        {' '}
+                        <span className="z_title-dark">New</span>
+                    </h2>
+                    <a href="#" className="z_view-all-link">
+                        View All <FaChevronRight className="z_view-all-icon" />
+                    </a>
+                </div>
                 <div className="row">
                     {dummyProducts.map((product, index) => (
                         <div key={index} className="col-lg-3 col-md-6 col-sm-6">

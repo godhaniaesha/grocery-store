@@ -84,3 +84,22 @@
     .db_card { min-width: 220px; }
   }
   
+
+  footer ul li {
+    margin-bottom: 0.5rem;
+    cursor: pointer;
+  }
+  
+  footer ul li:hover {
+    text-decoration: underline;
+  }
+  
+  footer .fs-5:hover {
+    color: #ff6f61;
+    transition: color 0.3s ease;
+  }
+  
+  footer a:hover {
+    text-decoration: underline;
+  }
+  

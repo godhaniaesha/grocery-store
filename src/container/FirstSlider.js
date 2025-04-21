@@ -2,8 +2,8 @@ import React from 'react';
 import { Carousel } from 'react-bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
 // Images
-import slide1 from '../image/z_accets/Slide1.png';
-import slide2 from '../image/z_accets/Slide2.png';
+import slide1 from '../image/z_accets/slide1.png';
+import slide2 from '../image/z_accets/Tabpanel.png';
 import slide3 from '../image/z_accets/Slide3.png';
 import '../styles/Z_style.css';
 

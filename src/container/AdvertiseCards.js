@@ -11,17 +11,17 @@ function AdvertiseCards() {
         <Container className="my-4">
             <Row className="g-4">
                 <Col xs={12} lg={8}>
-                    <div className="z_advertise-card z_large-card">
+                    <div className="z_advertise-card z_large-card z_first-card h-100">
                         <div className="z_card-image">
                             <img src={GrainsImage} alt="Fresh Grains" />
-                            <div className="z_content-area">
+                            <div className="z_content-area">    
                                 <div className="z_advertise-content">
                                     <h2 className="z_advertise-title">
-                                        <span className="text-success">Don't miss our daily</span><br />
-                                        <span className="text-success">amazing deals.</span>
+                                        <span>Don't miss our daily</span><br />
+                                        <span>amazing deals.</span>
                                     </h2>
                                     <p className="z_advertise-text text-dark">Save up to 60% off on your first order</p>
-                                    <button className="z_advertise-btn bg-success">
+                                    <button className="z_advertise-btn">
                                         Order Now
                                         <span className="z_btn-arrow">→</span>
                                     </button>
@@ -33,7 +33,7 @@ function AdvertiseCards() {
                 <Col xs={12} lg={4}>
                     <Row className="g-4">
                         <Col xs={12} md={6} lg={12}>
-                            <div className="z_advertise-card z_small-card">
+                            <div className="z_advertise-card z_small-card z_second-card">
                                 <div className="z_card-image">
                                     <img src={VeggieImage} alt="Fresh Vegetables" />
                                     <div className="z_content-area">

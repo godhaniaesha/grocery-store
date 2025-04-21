@@ -11,6 +11,7 @@ import SingleCard from './container/SingleCard';
 import Menuheader from './components/Menuheader';
 import AdvertiseCards from './container/AdvertiseCards';
 import Testimonial from './container/Testimonial';
+import Footer from './container/Footer';
 
 function App() {
   return (
@@ -22,6 +23,7 @@ function App() {
 
           <Route path="/HomeMain" element={<HomeMain />} />
           <Route path="/Searchheader" element={<SearchHeader />} />
+          <Route path="/Footer" element={<Footer />} />
           <Route path="/PopularCategories" element={<PopularCategories />} />
           <Route path="/Firstslider" element={<FirstSlider />} />
           <Route path="/Singlecard" element={<SingleCard />} />
