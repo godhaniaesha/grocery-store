@@ -566,9 +566,9 @@
   }
   
   .x_testimonial_slider .swiper-slide-active {
-    opacity: 1;
-    transform: scale(1.1);
-  }
+    opacity: 1 !important;
+    transform: scale(1.1) !important;
+}
   
   .x_testimonial_slider .swiper-button-next,
   .x_testimonial_slider .swiper-button-prev {
