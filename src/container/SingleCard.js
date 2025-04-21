@@ -104,7 +104,7 @@ function SingleCard() {
 
     return (
         <>
-            <div className="container my-5">
+            <div className="a_header_container my-5">
                 <div className="d-flex justify-content-between align-items-center mb-4">
                     <h2 className="z_section-title">
                         <span className="z_title-highlight">What's</span>
