@@ -112,7 +112,7 @@ export default function PopularCategories() {
   ];
 
   return (
-    <Container className="py-5">
+    <div className="a_header_container py-5">
       <div className="d-flex justify-content-between align-items-center mb-4">
         <h2 className="m-0">Popular Category</h2>
         <div className="slider-nav d-flex gap-2">
@@ -162,6 +162,6 @@ export default function PopularCategories() {
           </SwiperSlide>
         ))}
       </Swiper>
-    </Container>
+    </div>
   );
 }

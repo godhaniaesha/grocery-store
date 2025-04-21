@@ -11,18 +11,24 @@ import SingleCard from './container/SingleCard';
 import Menuheader from './components/Menuheader';
 import AdvertiseCards from './container/AdvertiseCards';
 import Testimonial from './container/Testimonial';
+import Recommended from './container/Recommended';
 
 function App() {
   return (
     <BrowserRouter>
       <Routes>
+        {/* aesha */}
           <Route path="*" element={<Home />} />
           <Route path="/Menuheader" element={<Menuheader />} />
           <Route path="/Testimonial" element={<Testimonial />} />
-
           <Route path="/HomeMain" element={<HomeMain />} />
+          <Route path="/Recommended" element={<Recommended />} />
+
+          {/* denisha */}
           <Route path="/Searchheader" element={<SearchHeader />} />
           <Route path="/PopularCategories" element={<PopularCategories />} />
+
+          {/* krupali */}
           <Route path="/Firstslider" element={<FirstSlider />} />
           <Route path="/Singlecard" element={<SingleCard />} />
           <Route path="/Advertisement" element={<AdvertiseCards />} />

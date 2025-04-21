@@ -40,9 +40,16 @@ export default function SearchHeader() {
               {/* Desktop Search */}
               <div className="d-none d-md-flex mx-sm-3 mx-1 flex-grow-1 justify-content-center">
                 <div className="input-group rounded-pill overflow-hidden" style={{ maxWidth: '600px', width: '100%' }}>
-                  <input
+                  {/* <input
                     type="text"
                     className="form-control border-0 py-2 px-sm-3 px-1"
+                    placeholder="Search for groceries..."
+                    value={searchQuery}
+                    onChange={(e) => setSearchQuery(e.target.value)}
+                  /> */}
+                  <input
+                    type="text"
+                    className="form-control border-0 py-2 px-sm-3 px-1 custom-input"
                     placeholder="Search for groceries..."
                     value={searchQuery}
                     onChange={(e) => setSearchQuery(e.target.value)}
@@ -89,35 +96,35 @@ export default function SearchHeader() {
                 </div>
 
                 <div className="text-center d-md-none d-block position-relative">
-                  <button className="btn bg-transparent p-0 border-0 d-flex justify-content-center w-100 text-white"  onClick={toggleMobileSearch}>
-                    
-                    {showMobileSearch ? <FaTimes size={18}  /> : <FaSearch size={18}  />}
+                  <button className="btn bg-transparent p-0 border-0 d-flex justify-content-center w-100 text-white" onClick={toggleMobileSearch}>
+
+                    {showMobileSearch ? <FaTimes size={18} /> : <FaSearch size={18} />}
                   </button>
                 </div>
-               
+
               </div>
             </div>
             {showMobileSearch && (
-            <div className="d-md-none my-2 mb-2 animate-slide-down w-100">
-              <div className="input-group rounded-pill overflow-hidden">
-                <input
-                  type="text"
-                  className="form-control border-0 py-2 px-3"
-                  placeholder="Search for groceries..."
-                  value={searchQuery}
-                  onChange={(e) => setSearchQuery(e.target.value)}
-                  autoFocus
-                />
-                <button className="btn btn-light d-flex align-items-center justify-content-center px-3" type="button">
-                  <FaSearch />
-                </button>
+              <div className="d-md-none my-2 mb-2 animate-slide-down w-100">
+                <div className="input-group rounded-pill overflow-hidden">
+                  <input
+                    type="text"
+                    className="form-control border-0 py-2 px-3"
+                    placeholder="Search for groceries..."
+                    value={searchQuery}
+                    onChange={(e) => setSearchQuery(e.target.value)}
+                    autoFocus
+                  />
+                  <button className="btn btn-light d-flex align-items-center justify-content-center px-3" type="button">
+                    <FaSearch />
+                  </button>
+                </div>
               </div>
-            </div>
-          )}
+            )}
           </nav>
 
           {/* Mobile Search */}
-        
+
         </div>
       </header>
 
@@ -162,6 +169,15 @@ export default function SearchHeader() {
             min-height: 16px;
           }
         }
+input:focus {
+  box-shadow: none !important;
+  outline: none;
+}
+
+        .custom-input:focus {
+  box-shadow: none !important;
+  outline: none;
+}
       `}</style>
     </>
   );

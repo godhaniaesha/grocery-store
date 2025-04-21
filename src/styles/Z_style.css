@@ -845,3 +845,23 @@
 .z_content-right .z_advertise-btn {
     margin-left: auto;
 }
+
+
+/* aesha Recommended start  */
+.btn-outline-secondary {
+  color: #666;
+  border-color: #ddd;
+}
+
+.btn-outline-secondary:hover {
+  background-color: #f8f9fa;
+  border-color: #666;
+  color: #333;
+}
+
+.btn {
+  padding: 6px 20px;
+  border-radius: 4px;
+  font-size: 14px;
+}
+/* aesha Recommended end  */

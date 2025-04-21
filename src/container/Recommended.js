@@ -8,11 +8,12 @@ import Image from '../image/z_accets/Dates 4.png';
 import '../styles/Z_style.css';
 import { FaShoppingCart, FaHeart, FaEye, FaStar, FaTimes, FaMinus, FaPlus } from 'react-icons/fa';
 
-function SingleCard() {
+function Recommended(props) {
     const [showModal, setShowModal] = useState(false);
     const [selectedProduct, setSelectedProduct] = useState(null);
     const [modalShow, setModalShow] = useState(false);
     const [quantity, setQuantity] = useState(1);
+    const [selectedCategory, setSelectedCategory] = useState('All');
 
     const handleClose = () => {
         setModalShow(false);
@@ -39,75 +40,127 @@ function SingleCard() {
     const dummyProducts = [
         {
             image: Walnut,
-            title: "Walnut",
-            subtitle: "Vitamin-c fruit",
+            title: "Moong Dal",
+            subtitle: "Grains & Pulses",
             price: 45.00,
             originalPrice: 50.00,
             rating: 5.0,
-            description: "Fresh and juicy Walnut packed with Vitamin C."
+            category: "Grains & Pulses",
+            description: "Premium quality Moong Dal, perfect for everyday cooking."
         },
         {
             image: Image,
-            title: "Fresh Dates",
-            subtitle: "Premium quality dates",
+            title: "Pure Ghee",
+            subtitle: "Oil & Ghee",
             price: 35.00,
             originalPrice: 40.00,
             rating: 4.5,
-            description: "Premium quality dates, naturally sweet and nutritious. Great for energy and digestion."
-        },
-        {
-            image: Walnut,
-            title: "Walnut",
-            subtitle: "Vitamin-c fruit",
-            price: 45.00,
-            originalPrice: 50.00,
-            rating: 5.0,
-            description: "Fresh and juicy Walnut packed with Vitamin C."
-        },
-        {
-            image: Image,
-            title: "Fresh Dates",
-            subtitle: "Premium quality dates",
-            price: 35.00,
-            originalPrice: 40.00,
-            rating: 4.5,
-            description: "Premium quality dates, naturally sweet and nutritious. Great for energy and digestion."
+            category: "Oil & Ghee",
+            description: "Pure and authentic ghee made from cow's milk."
         },
         {
             image: Almonds,
-            title: "Organic Almonds",
-            subtitle: "Premium nuts collection",
+            title: "Garam Masala",
+            subtitle: "Spices & Masala",
+            price: 45.00,
+            originalPrice: 50.00,
+            rating: 5.0,
+            category: "Spices & Masala",
+            description: "Authentic blend of aromatic Indian spices."
+        },
+        {
+            image: Image,
+            title: "Fresh Paneer",
+            subtitle: "Dairy & Bakery",
+            price: 35.00,
+            originalPrice: 40.00,
+            rating: 4.5,
+            category: "Dairy & Bakery",
+            description: "Fresh and soft paneer made from pure milk."
+        },
+        {
+            image: Almonds,
+            title: "Fresh Vegetables Mix",
+            subtitle: "Fruits & Vegetables",
             price: 55.00,
             originalPrice: 65.00,
             rating: 5.0,
-            description: "Organic almonds, rich in healthy fats and protein. Perfect for snacking or cooking."
+            category: "Fruits & Vegetables",
+            description: "Fresh assorted vegetables, hand-picked for quality."
         },
         {
             image: Cashews,
-            title: "Cashew Nuts",
-            subtitle: "Premium nuts selection",
+            title: "Green Tea",
+            subtitle: "Beverages",
             price: 48.00,
             originalPrice: 60.00,
             rating: 4.8,
-            description: "Premium quality cashew nuts, creamy and delicious. Great source of healthy fats."
+            category: "Beverages",
+            description: "Pure green tea leaves for a refreshing experience."
+        },
+        {
+            image: Walnut,
+            title: "Mixed Dry Fruits",
+            subtitle: "Snacks & Packaged Foods",
+            price: 45.00,
+            originalPrice: 50.00,
+            rating: 5.0,
+            category: "Snacks & Packaged Foods",
+            description: "Premium quality mixed dry fruits pack."
         }
     ];
+    const categoryDisplayNames = {
+        'All': 'All',
+        'Grains & Pulses': 'Grains',
+        'Oil & Ghee': 'Oil',
+        'Spices & Masala': 'Spices',
+        'Dairy & Bakery': 'Dairy',
+        'Fruits & Vegetables': 'Fruits',
+        'Beverages': 'Beverages',
+        'Snacks & Packaged Foods': 'Snacks'
+    };
 
     const renderStars = (rating) => {
         return [...Array(5)].map((_, index) => (
-            <FaStar 
-                key={index} 
+            <FaStar
+                key={index}
                 className={`z_star ${index < rating ? 'z_star-filled' : ''}`}
             />
         ));
     };
+    // Get unique categories from products
+    const categories = ['All', ...new Set(dummyProducts.map(product => product.category))];
+    
+    // Filter products based on selected category
+    const filteredProducts = selectedCategory === 'All' 
+        ? dummyProducts 
+        : dummyProducts.filter(product => product.category === selectedCategory);
 
     return (
         <>
-            <div className="a_header_container my-5">
+            <div className="a_header_container">
+                <div className="d-flex justify-content-between align-items-center mb-4">
+                    <h2 className="mb-0">Recommended For you</h2>
+                    <div className="d-flex gap-3">
+                        {categories.map((category, index) => (
+                            // Add this mapping object after dummyProducts array
+                           
+                            
+                            // In the return statement, update the button rendering:
+                                        <button
+                                            key={index}
+                                            className={`btn ${selectedCategory === category ? 'btn-success' : 'btn-outline-secondary'}`}
+                                            onClick={() => setSelectedCategory(category)}
+                                        >
+                                            {categoryDisplayNames[category] || category}
+                                        </button>
+                        ))}
+                    </div>
+                </div>
+
                 <div className="row">
-                    {dummyProducts.map((product, index) => (
-                        <div key={index} className="col-lg-2 col-md-4 col-sm-6">
+                    {filteredProducts.map((product, index) => (
+                        <div key={index} className="col-xl-2 col-lg-4 col-md-3 col-sm-6 mb-4">
                             <Card className="z_product-card">
                                 <div className="z_product-image-container">
                                     <Card.Img variant="top" src={product.image} alt={product.title} />
@@ -119,7 +172,7 @@ function SingleCard() {
                                             <button className="z_hover-icon-btn">
                                                 <FaHeart />
                                             </button>
-                                            <button 
+                                            <button
                                                 className="z_hover-icon-btn"
                                                 onClick={() => handleShow(product)}
                                             >
@@ -158,8 +211,8 @@ function SingleCard() {
                             <div className="row g-0">
                                 <div className="col-md-6 position-relative">
                                     <div className="modal-img-wrapper">
-                                        <img 
-                                            src={selectedProduct.image} 
+                                        <img
+                                            src={selectedProduct.image}
                                             alt={selectedProduct.title}
                                             className="z_modal-product-img"
                                         />
@@ -169,7 +222,7 @@ function SingleCard() {
                                 <div className="col-md-6">
                                     <div className="z_modal-content">
                                         <h3 className="mb-3">{selectedProduct.title}</h3>
-                                        
+
                                         <div className="z_rating-container mb-4">
                                             {renderStars(selectedProduct.rating)}
                                             <span className="z_rating-text ms-2">({selectedProduct.rating} customer review)</span>
@@ -188,19 +241,19 @@ function SingleCard() {
 
                                         <div className="z_modal-quantity-container">
                                             <div className="z_modal-quantity-selector">
-                                                <button 
+                                                <button
                                                     className="z_modal-quantity-btn"
                                                     onClick={() => handleQuantityChange(-1)}
                                                     disabled={quantity === 1}
                                                 >
                                                     <FaMinus size={12} />
                                                 </button>
-                                                
+
                                                 <span className="z_modal-quantity-number">
                                                     {quantity}
                                                 </span>
-                                                
-                                                <button 
+
+                                                <button
                                                     className="z_modal-quantity-btn"
                                                     onClick={() => handleQuantityChange(1)}
                                                     disabled={quantity === 10}
@@ -208,7 +261,7 @@ function SingleCard() {
                                                     <FaPlus size={12} />
                                                 </button>
                                             </div>
-                                            
+
                                             <button className="z_modal-add-cart-btn">
                                                 Add to cart
                                                 <FaShoppingCart className="z_cart-icon" />
@@ -222,7 +275,7 @@ function SingleCard() {
                                             </div>
                                             <div className="z_modal-details-item">
                                                 <span className="z_modal-details-label">Category:</span>
-                                                <span className="z_modal-details-value">Body & Bath</span>
+                                                <span className="z_modal-details-value">{selectedProduct.category}</span>
                                             </div>
                                             <div className="z_modal-details-item">
                                                 <span className="z_modal-details-label">Brand:</span>
@@ -240,4 +293,4 @@ function SingleCard() {
     );
 }
 
-export default SingleCard;
+export default Recommended;
