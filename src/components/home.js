@@ -9,6 +9,7 @@ import AboutUs from '../container/AboutUs';
 import Footer from '../container/Footer';
 import Recommended from '../container/Recommended';
 import Testimonial from '../container/Testimonial';
+import Bestseller from '../container/Bestseller';
 
 function home(props) {
     return (
@@ -19,8 +20,9 @@ function home(props) {
         <PopularCategories></PopularCategories>
         <SingleCard></SingleCard>
         <AdvertiseCards></AdvertiseCards>
-        {/* <Recommended></Recommended> */}
+        <Recommended></Recommended>
         <AboutUs></AboutUs>
+        <Bestseller></Bestseller>
         <Testimonial></Testimonial>
         <Footer></Footer>
 
