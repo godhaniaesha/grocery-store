@@ -14,12 +14,12 @@ function home(props) {
     return (
         <>
         <SearchHeader></SearchHeader>
-        <Menuheader></Menuheader>
+        {/* <Menuheader></Menuheader> */}
         <FirstSlider></FirstSlider>
         <PopularCategories></PopularCategories>
         <SingleCard></SingleCard>
         <AdvertiseCards></AdvertiseCards>
-        <Recommended></Recommended>
+        {/* <Recommended></Recommended> */}
         <AboutUs></AboutUs>
         <Testimonial></Testimonial>
         <Footer></Footer>
