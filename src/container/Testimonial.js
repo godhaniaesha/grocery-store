@@ -45,7 +45,7 @@ export default function Testimonial() {
       <div className="a_header_container py-5">
       <div className="x_testimonial_header text-center mb-5">
           <h5 className="x_testimonial_subtitle">Testimonial</h5>
-          <h1 className="x_testimonial_title">Our Clients Say!!!</h1>
+          <h2 className="x_testimonial_title">Our Clients Say!!!</h2>
         </div>
         
         <Swiper

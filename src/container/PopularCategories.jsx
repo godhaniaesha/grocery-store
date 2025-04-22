@@ -114,7 +114,12 @@ export default function PopularCategories() {
   return (
     <div className="a_header_container py-5">
       <div className="d-flex justify-content-between align-items-center mb-4">
-        <h2 className="m-0">Popular Category</h2>
+        
+      <h2 className="z_section-title mb-4">
+                        <span className="z_title-highlight">Popular</span>
+                        {' '}
+                        <span className="z_title-dark">Category</span>
+                    </h2>
         <div className="slider-nav d-flex gap-2">
           <button 
             className="btn btn-outline-success rounded-circle" 
