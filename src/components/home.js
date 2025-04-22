@@ -10,6 +10,7 @@ import Footer from '../container/Footer';
 import Recommended from '../container/Recommended';
 import Testimonial from '../container/Testimonial';
 import Bestseller from '../container/Bestseller';
+import WhyUs from '../container/WhyUs';
 
 function home(props) {
     return (
@@ -17,12 +18,13 @@ function home(props) {
         <SearchHeader></SearchHeader>
         {/* <Menuheader></Menuheader> */}
         <FirstSlider></FirstSlider>
-        <PopularCategories></PopularCategories>
-        <SingleCard></SingleCard>
+        <PopularCategories></PopularCategories>        
+        <Bestseller></Bestseller>
         <AdvertiseCards></AdvertiseCards>
         <Recommended></Recommended>
+        <WhyUs></WhyUs>
         <AboutUs></AboutUs>
-        <Bestseller></Bestseller>
+        <SingleCard></SingleCard>
         <Testimonial></Testimonial>
         <Footer></Footer>
 
