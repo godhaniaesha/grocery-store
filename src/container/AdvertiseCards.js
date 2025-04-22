@@ -8,7 +8,7 @@ import FruitImage from '../image/z_accets/banner-2.png';
 
 function AdvertiseCards() {
     return (
-        <div className="a_header_container py-5  my-5">
+        <div className="a_header_container py-5">
             <Row className="g-4">
                 <Col xs={12} lg={8}>
                     <div className="z_advertise-card z_large-card z_first-card h-100">
