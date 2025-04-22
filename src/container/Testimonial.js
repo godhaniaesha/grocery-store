@@ -1,8 +1,9 @@
 import React from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
-import { Navigation } from 'swiper/modules';
+import { Autoplay } from 'swiper/modules';
 import 'swiper/css';
 import 'swiper/css/navigation';
+import 'swiper/css/autoplay';
 import userImage from '../image/563244-natural-history-museum-london-1920x1080-wallpaper.jpg';
 
 export default function Testimonial() {
@@ -48,12 +49,16 @@ export default function Testimonial() {
         </div>
         
         <Swiper
-          modules={[Navigation]}
+          modules={[Autoplay]}
           spaceBetween={30}
           slidesPerView={3}
-          navigation={true}
           centeredSlides={true}
           loop={true}
+          autoplay={{
+            delay: 2500,
+            disableOnInteraction: false,
+            pauseOnMouseEnter: true
+          }}
           breakpoints={{
             320: {
               slidesPerView: 1,

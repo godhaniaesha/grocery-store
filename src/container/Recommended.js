@@ -107,16 +107,65 @@ function Recommended(props) {
             rating: 5.0,
             category: "Snacks & Packaged Foods",
             description: "Premium quality mixed dry fruits pack."
+        },
+        // Additional products for each category
+        {
+            image: Almonds,
+            title: "Toor Dal",
+            subtitle: "Grains & Pulses",
+            price: 42.00,
+            originalPrice: 48.00,
+            rating: 4.8,
+            category: "Grains & Pulses",
+            description: "High quality Toor Dal for your daily cooking needs."
+        },
+        {
+            image: Cashews,
+            title: "Black Pepper",
+            subtitle: "Spices & Masala",
+            price: 38.00,
+            originalPrice: 45.00,
+            rating: 4.7,
+            category: "Spices & Masala",
+            description: "Fresh ground black pepper for enhanced flavor."
+        },
+        {
+            image: Image,
+            title: "Fresh Butter",
+            subtitle: "Dairy & Bakery",
+            price: 32.00,
+            originalPrice: 38.00,
+            rating: 4.9,
+            category: "Dairy & Bakery",
+            description: "Pure and fresh butter made from farm milk."
+        },
+        {
+            image: Walnut,
+            title: "Fresh Apples",
+            subtitle: "Fruits & Vegetables",
+            price: 28.00,
+            originalPrice: 35.00,
+            rating: 4.6,
+            category: "Fruits & Vegetables",
+            description: "Fresh and juicy apples from the best orchards."
+        },
+        {
+            image: Almonds,
+            title: "Trail Mix",
+            subtitle: "Snacks & Packaged Foods",
+            price: 52.00,
+            originalPrice: 60.00,
+            rating: 4.8,
+            category: "Snacks & Packaged Foods",
+            description: "Healthy mix of nuts, dried fruits, and seeds."
         }
     ];
     const categoryDisplayNames = {
         'All': 'All',
         'Grains & Pulses': 'Grains',
-        'Oil & Ghee': 'Oil',
         'Spices & Masala': 'Spices',
         'Dairy & Bakery': 'Dairy',
         'Fruits & Vegetables': 'Fruits',
-        'Beverages': 'Beverages',
         'Snacks & Packaged Foods': 'Snacks'
     };
 
@@ -129,9 +178,10 @@ function Recommended(props) {
         ));
     };
     // Get unique categories from products
-    const categories = ['All', ...new Set(dummyProducts.map(product => product.category))];
+    // Replace the categories constant with this:
+    const categories = Object.keys(categoryDisplayNames);
     
-    // Filter products based on selected category
+    // Update the filter logic
     const filteredProducts = selectedCategory === 'All' 
         ? dummyProducts 
         : dummyProducts.filter(product => product.category === selectedCategory);
@@ -139,21 +189,21 @@ function Recommended(props) {
     return (
         <>
             <div className="a_header_container">
-                <div className="d-flex justify-content-between align-items-center x_filter_btn mb-4">
-                    <h2 className="mb-0">Recommended For you</h2>
-                    <div className="d-flex gap-3">
+                <div className="d-flex flex-lg-row flex-column justify-content-between align-items-center x_filter_btn mb-4">
+                    <h2 className="z_section-title mb-4">
+                        <span className="z_title-highlight">Recommended</span>
+                        {' '}
+                        <span className="z_title-dark">For you</span>
+                    </h2>
+                    <div className="d-flex gap-3 mb-md-3 flex-wrap">
                         {categories.map((category, index) => (
-                            // Add this mapping object after dummyProducts array
-                           
-                            
-                            // In the return statement, update the button rendering:
-                                        <button
-                                            key={index}
-                                            className={`btn ${selectedCategory === category ? 'btn-success' : 'btn-outline-secondary'}`}
-                                            onClick={() => setSelectedCategory(category)}
-                                        >
-                                            {categoryDisplayNames[category] || category}
-                                        </button>
+                            <button
+                                key={index}
+                                className={`btn ${selectedCategory === category ? 'btn-success' : 'btn-outline-secondary'}`}
+                                onClick={() => setSelectedCategory(category)}
+                            >
+                                {categoryDisplayNames[category]}
+                            </button>
                         ))}
                     </div>
                 </div>

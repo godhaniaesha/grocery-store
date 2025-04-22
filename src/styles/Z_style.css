@@ -318,8 +318,8 @@
 .z_hover-icons {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 18px;
-  padding: 24px;
+  gap: 10px;
+  padding: 18px;
   transform: translateY(20px);
   transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
 }
@@ -337,8 +337,8 @@
 }
 
 .z_hover-icon-btn {
-  width: 48px;
-  height: 48px;
+  width: 35px;
+  height: 35px;
   border-radius: 10px;
   background: white;
   border: none;
@@ -348,7 +348,7 @@
   cursor: pointer;
   transition: all 0.3s ease;
   color: #333;
-  font-size: 20px;
+  font-size: 18px;
   transform: scale(0);
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
@@ -846,12 +846,12 @@
 
 .x_filter_btn .btn-outline-secondary:hover {
   background-color: #f8f9fa;
-  border-color: #666;
+  border-color: #2c6145;
   color: #333;
 }
 
 .x_filter_btn .btn {
-  padding: 6px 20px;
+  padding: 5px 18px;
   border-radius: 4px;
   font-size: 14px;
 }

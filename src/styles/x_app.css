@@ -479,7 +479,7 @@
   }
   
   .x_testimonial_title {
-    font-size: 2.5rem;
+    /* font-size: 2.5rem; */
     color: #333;
     font-weight: 600;
     margin-bottom: 3rem;
@@ -544,7 +544,7 @@
     font-size: 15px;
     line-height: 2;
     margin: 15px 0;
-    padding: 0 30px;
+    padding: 0 40px;
   }
   
   .x_testimonial_name {
@@ -554,54 +554,67 @@
     margin-top: 15px;
   }
   
-  /* Swiper custom styles */
+   /* Swiper custom styles */
   .x_testimonial_slider {
-    padding: 50px 10px 30px;
+    padding: 80px 10px 30px;
+    position: relative;
   }
   
   .x_testimonial_slider .swiper-slide {
-    opacity: 0.8;
-    transform: scale(0.9);
-    transition: all 0.3s ease;
+    opacity: 0.6;
+    transform: scale(0.85);
+    transition: all 0.4s ease;
+    filter: blur(1px);
   }
   
   .x_testimonial_slider .swiper-slide-active {
     opacity: 1 !important;
-    transform: scale(1.1) !important;
-}
+    transform: scale(1.05) !important;
+    filter: blur(0);
+    z-index: 2;
+  }
+
+  .x_testimonial_slider .swiper-slide-prev,
+  .x_testimonial_slider .swiper-slide-next {
+    opacity: 0.8;
+    filter: blur(0.5px);
+  }
   
   .x_testimonial_slider .swiper-button-next,
   .x_testimonial_slider .swiper-button-prev {
-    color: #4a9473;
-    width: 40px;
-    height: 40px;
+    color: #285641;
+    width: 45px;
+    height: 45px;
+    background: white;
+    border-radius: 50%;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    top: 30px;
+    right: 5px;
+  }
+
+  .x_testimonial_slider .swiper-button-prev {
+    right: 60px;
+    left: auto;
   }
   
   .x_testimonial_slider .swiper-button-next:after,
   .x_testimonial_slider .swiper-button-prev:after {
-    font-size: 20px;
+    font-size: 18px;
+    font-weight: bold;
   }
-  
-  @media (max-width: 768px) {
-    .x_testimonial_title {
-      font-size: 2rem;
-    }
-    
-    .x_testimonial_card {
-      margin-top: 40px;
-      padding: 1.5rem;
-    }
-    
-    .x_testimonial_text {
-      font-size: 14px;
-      padding: 0 15px;
-    }
-    
-    .x_quote_left,
-    .x_quote_right {
-      font-size: 30px;
-    }
+
+  .x_testimonial_slider .swiper-button-next:hover,
+  .x_testimonial_slider .swiper-button-prev:hover {
+    background: #285641;
+    color: white;
+    transform: translateY(-2px);
+    transition: all 0.3s ease;
   }
+
+  .x_testimonial_slider .swiper-slide-active {
+    opacity: 1 !important;
+    transform: scale(1.1) !important;
+}
   /* Testimonial styles end */
 
 /* Testimonial Header styles */
@@ -640,3 +653,125 @@
     font-size: 32px;
   }
 }
+
+
+/* why choos us start */
+/* Why Choose Us Section Styles */
+.x_why_section {
+    padding: 80px 0;
+    background-color: #f8f9fa;
+}
+
+.x_why_header {
+    margin-bottom: 60px;
+}
+
+.x_why_subtitle {
+    color: #285641;
+    font-weight: 500;
+    display: block;
+    margin-bottom: 8px;
+    position: relative;
+}
+
+.x_why_subtitle::before,
+.x_why_subtitle::after {
+    content: "—";
+    display: inline-block;
+    margin: 0 10px;
+    color: #285641;
+}
+
+.x_why_title {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: #1a1a1a;
+    margin: 0;
+}
+
+.x_title-highlight {
+    color: #285641;
+}
+
+.x_why_features {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+    padding: 20px;
+}
+
+.x_feature_card {
+    background: white;
+    padding: 30px;
+    border-radius: 10px;
+    text-align: center;
+    transition: all 0.3s ease;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+}
+
+.x_feature_card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+}
+
+.x_feature_icon {
+    font-size: 2.5rem;
+    color: #285641;
+    margin-bottom: 20px;
+    transition: all 0.3s ease;
+}
+
+.x_feature_card:hover .x_feature_icon {
+    transform: scale(1.1);
+    color: #2c6145;
+}
+
+.x_feature_title {
+    font-size: 1.25rem;
+    color: #333;
+    margin-bottom: 15px;
+    font-weight: 600;
+}
+
+.x_feature_description {
+    color: #666;
+    font-size: 0.95rem;
+    line-height: 1.6;
+    margin: 0;
+}
+
+/* Responsive Styles */
+@media (max-width: 992px) {
+    .x_why_features {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    .x_why_section {
+        padding: 60px 0;
+    }
+
+    .x_why_title {
+        font-size: 2rem;
+    }
+
+    .x_feature_card {
+        padding: 25px;
+    }
+}
+
+@media (max-width: 576px) {
+    .x_why_features {
+        grid-template-columns: 1fr;
+    }
+
+    .x_why_title {
+        font-size: 1.75rem;
+    }
+
+    .x_feature_icon {
+        font-size: 2rem;
+    }
+}
+/* why choos us end */
