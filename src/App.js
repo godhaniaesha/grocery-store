@@ -16,6 +16,7 @@ import AboutUs from './container/AboutUs';
 import Footer from './container/Footer';
 import Bestseller from './container/Bestseller';
 import WhyUs from './container/WhyUs';
+import Subscribe from './container/Subscribe';
 
 function App() {
   return (
@@ -28,6 +29,8 @@ function App() {
           <Route path="/HomeMain" element={<HomeMain />} />
           <Route path="/Recommended" element={<Recommended />} />
           <Route path="/WhyUs" element={<WhyUs />} />
+          <Route path="/Subscribe" element={<Subscribe />} />
+
 
 
           {/* denisha */}

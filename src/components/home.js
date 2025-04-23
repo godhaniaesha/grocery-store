@@ -11,6 +11,7 @@ import Recommended from '../container/Recommended';
 import Testimonial from '../container/Testimonial';
 import Bestseller from '../container/Bestseller';
 import WhyUs from '../container/WhyUs';
+import Subscribe from '../container/Subscribe';
 
 function home(props) {
     return (
@@ -21,11 +22,13 @@ function home(props) {
         <PopularCategories></PopularCategories>        
         <Bestseller></Bestseller>
         <AdvertiseCards></AdvertiseCards>
-        <Recommended></Recommended>
+        <SingleCard></SingleCard>      
+        {/* <AboutUs></AboutUs> */}
         <WhyUs></WhyUs>
-        <AboutUs></AboutUs>
-        <SingleCard></SingleCard>
+        <Recommended></Recommended>        
         <Testimonial></Testimonial>
+        <Subscribe></Subscribe>
+        
         <Footer></Footer>
 
         </>

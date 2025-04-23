@@ -34,9 +34,10 @@ function WhyUs() {
         <div className="x_why_section">
             <div className="a_header_container">
                 <div className="x_why_header text-center">
-                    <h5 className="x_why_subtitle">Why Choose Us</h5>
-                    <h2 className="x_why_title">
-                        <span className="x_title-highlight">Find Reasons</span> to Choose Us
+                    <h5 className="x_testimonial_subtitle">Why Choose Us</h5>
+                    
+                    <h2 className="x_testimonial_title">
+                       Find Reasons to Choose Us
                     </h2>
                 </div>
                 

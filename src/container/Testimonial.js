@@ -44,8 +44,10 @@ export default function Testimonial() {
     <div className="x_testimonial_section">
       <div className="a_header_container py-5">
       <div className="x_testimonial_header text-center mb-5">
-          <h5 className="x_testimonial_subtitle">Testimonial</h5>
-          <h2 className="x_testimonial_title">Our Clients Say!!!</h2>
+          {/* <h5 className="x_testimonial_subtitle">Testimonial</h5>
+          <h2 className="x_testimonial_title">Our Clients Say!!!</h2> */}
+          <h5 className="x_testimonial_subtitle">Reviews</h5>
+          <h2 className="x_testimonial_title">Latest Buyers Reviews</h2>
         </div>
         
         <Swiper
@@ -55,7 +57,7 @@ export default function Testimonial() {
           centeredSlides={true}
           loop={true}
           autoplay={{
-            delay: 2500,
+            delay: 5500,
             disableOnInteraction: false,
             pauseOnMouseEnter: true
           }}
