@@ -28,17 +28,17 @@ function App() {
     <BrowserRouter>
       <Routes>
         {/* aesha */}
-          <Route path="*" element={<Home />} />
-          <Route path="/Menuheader" element={<Menuheader />} />
-          <Route path="/Testimonial" element={<Testimonial />} />
-          <Route path="/HomeMain" element={<HomeMain />} />
-          <Route path="/Recommended" element={<Recommended />} />
-          <Route path="/WhyUs" element={<WhyUs />} />
-          <Route path="/Subscribe" element={<Subscribe />} />
+        <Route path="*" element={<Home />} />
+        <Route path="/Menuheader" element={<Menuheader />} />
+        <Route path="/Testimonial" element={<Testimonial />} />
+        <Route path="/HomeMain" element={<HomeMain />} />
+        <Route path="/Recommended" element={<Recommended />} />
+        <Route path="/WhyUs" element={<WhyUs />} />
+        <Route path="/Subscribe" element={<Subscribe />} />
+        <Route path="/AboutUs" element={<AboutUs />} />
 
         {/* denisha */}
         <Route path="/Searchheader" element={<SearchHeader />} />
-        <Route path="/AboutUs" element={<AboutUs />} />
         <Route path="/Footer" element={<Footer />} />
         <Route path="/PopularCategories" element={<PopularCategories />} />
         <Route path="/ProductDetail" element={<ProductDetail />} />
@@ -47,12 +47,12 @@ function App() {
         <Route path="/wishlist" element={<Wishlist />} />
 
 
-          {/* krupali */}
-          <Route path="/Firstslider" element={<FirstSlider />} />
-          <Route path="/Singlecard" element={<SingleCard />} />
-          <Route path="/Advertisement" element={<AdvertiseCards />} />
-          <Route path="/Bestsellers" element={<Bestseller />} />
-          <Route path="/Shop" element={<Shop />} />
+        {/* krupali */}
+        <Route path="/Firstslider" element={<FirstSlider />} />
+        <Route path="/Singlecard" element={<SingleCard />} />
+        <Route path="/Advertisement" element={<AdvertiseCards />} />
+        <Route path="/Bestsellers" element={<Bestseller />} />
+        <Route path="/Shop" element={<Shop />} />
       </Routes>
     </BrowserRouter>
   );
