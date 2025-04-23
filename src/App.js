@@ -16,31 +16,38 @@ import AboutUs from './container/AboutUs';
 import Footer from './container/Footer';
 import Bestseller from './container/Bestseller';
 import WhyUs from './container/WhyUs';
-
+import ProductDetail from './container/ProductDetail';
+import SimilarProduct from './container/SimilarProduct';
+import Cart from './container/Cart';
+import Wishlist from './components/Wishlist';
 function App() {
   return (
     <BrowserRouter>
       <Routes>
         {/* aesha */}
-          <Route path="*" element={<Home />} />
-          <Route path="/Menuheader" element={<Menuheader />} />
-          <Route path="/Testimonial" element={<Testimonial />} />
-          <Route path="/HomeMain" element={<HomeMain />} />
-          <Route path="/Recommended" element={<Recommended />} />
-          <Route path="/WhyUs" element={<WhyUs />} />
+        <Route path="*" element={<Home />} />
+        <Route path="/Menuheader" element={<Menuheader />} />
+        <Route path="/Testimonial" element={<Testimonial />} />
+        <Route path="/HomeMain" element={<HomeMain />} />
+        <Route path="/Recommended" element={<Recommended />} />
+        <Route path="/WhyUs" element={<WhyUs />} />
 
+        {/* denisha */}
+        <Route path="/Searchheader" element={<SearchHeader />} />
+        <Route path="/AboutUs" element={<AboutUs />} />
+        <Route path="/Footer" element={<Footer />} />
+        <Route path="/PopularCategories" element={<PopularCategories />} />
+        <Route path="/ProductDetail" element={<ProductDetail />} />
+        <Route path="/SimilarProduct" element={<SimilarProduct />} />
+        <Route path="/cart" element={<Cart />} />
+        <Route path="/wishlist" element={<Wishlist />} />
 
-          {/* denisha */}
-          <Route path="/Searchheader" element={<SearchHeader />} />
-          <Route path="/AboutUs" element={<AboutUs />} />
-          <Route path="/Footer" element={<Footer />} />
-          <Route path="/PopularCategories" element={<PopularCategories />} />
-
-          {/* krupali */}
-          <Route path="/Firstslider" element={<FirstSlider />} />
-          <Route path="/Singlecard" element={<SingleCard />} />
-          <Route path="/Advertisement" element={<AdvertiseCards />} />
-          <Route path="/Bestsellers" element={<Bestseller />} />
+        {/* krupali */}
+        <Route path="/Firstslider" element={<FirstSlider />} />
+        <Route path="/Singlecard" element={<SingleCard />} />
+        <Route path="/Advertisement" element={<AdvertiseCards />} />
+        <Route path="/Bestsellers" element={<Bestseller />} />
+        
       </Routes>
     </BrowserRouter>
   );

@@ -1127,3 +1127,15 @@
 .z_carousel-control:hover .z_carousel-icon {
   color: white;
 }
+
+
+.db_similiar_prdct .swiper-button-next{
+  right: 0% !important;
+  background-color: #2c6145!important;
+  color: white!important;
+}
+.db_similiar_prdct .swiper-button-prev{
+  left: 0% !important;
+  background-color: #2c6145 !important;
+  color: white!important;
+}
