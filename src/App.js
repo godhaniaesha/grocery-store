@@ -19,6 +19,10 @@ import WhyUs from './container/WhyUs';
 import Subscribe from './container/Subscribe';
 import Shop from './container/Shop';
 
+import ProductDetail from './container/ProductDetail';
+import SimilarProduct from './container/SimilarProduct';
+import Cart from './container/Cart';
+import Wishlist from './components/Wishlist';
 function App() {
   return (
     <BrowserRouter>
@@ -32,13 +36,16 @@ function App() {
           <Route path="/WhyUs" element={<WhyUs />} />
           <Route path="/Subscribe" element={<Subscribe />} />
 
+        {/* denisha */}
+        <Route path="/Searchheader" element={<SearchHeader />} />
+        <Route path="/AboutUs" element={<AboutUs />} />
+        <Route path="/Footer" element={<Footer />} />
+        <Route path="/PopularCategories" element={<PopularCategories />} />
+        <Route path="/ProductDetail" element={<ProductDetail />} />
+        <Route path="/SimilarProduct" element={<SimilarProduct />} />
+        <Route path="/cart" element={<Cart />} />
+        <Route path="/wishlist" element={<Wishlist />} />
 
-
-          {/* denisha */}
-          <Route path="/Searchheader" element={<SearchHeader />} />
-          <Route path="/AboutUs" element={<AboutUs />} />
-          <Route path="/Footer" element={<Footer />} />
-          <Route path="/PopularCategories" element={<PopularCategories />} />
 
           {/* krupali */}
           <Route path="/Firstslider" element={<FirstSlider />} />

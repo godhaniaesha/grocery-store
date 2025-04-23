@@ -1787,5 +1787,15 @@
 }
 
 .filter-button:hover {
-  background-color: #e9ecef !important;
+  background-color: #e9ecef !important;}
+
+.db_similiar_prdct .swiper-button-next{
+  right: 0% !important;
+  background-color: #2c6145!important;
+  color: white!important;
+}
+.db_similiar_prdct .swiper-button-prev{
+  left: 0% !important;
+  background-color: #2c6145 !important;
+  color: white!important;
 }
