@@ -117,7 +117,7 @@ function SingleCard() {
                 </div>
                 <div className="row">
                     {dummyProducts.map((product, index) => (
-                        <div key={index} className="col-xl-2 col-lg-4 col-md-3 col-sm-6 mb-4">
+                        <div key={index} className="col-xl-2 col-lg-4 col-md-4 col-sm-6 mb-4">
                             <Card className="z_product-card">
                                 <div className="z_product-image-container">
                                     <Card.Img variant="top" src={product.image} alt={product.title} />

@@ -16,6 +16,7 @@ import AboutUs from './container/AboutUs';
 import Footer from './container/Footer';
 import Bestseller from './container/Bestseller';
 import WhyUs from './container/WhyUs';
+import Shop from './container/Shop';
 
 function App() {
   return (
@@ -41,6 +42,7 @@ function App() {
           <Route path="/Singlecard" element={<SingleCard />} />
           <Route path="/Advertisement" element={<AdvertiseCards />} />
           <Route path="/Bestsellers" element={<Bestseller />} />
+          <Route path="/Shop" element={<Shop />} />
       </Routes>
     </BrowserRouter>
   );
