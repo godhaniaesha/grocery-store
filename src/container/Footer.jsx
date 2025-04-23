@@ -7,7 +7,7 @@ import '../styles/footer.css'; // You'll need to create this CSS file
 
 const Footer = () => {
   return (
-    <footer className="db_footer footer bg-dark text-white py-5">
+    <footer className="db_footer footer text-white py-5" style={{backgroundColor:"#213448"}}>
       <Container>
         <Row className="mb-4">
           <Col lg={3} md={6} className="mb-4 mb-md-0">

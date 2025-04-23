@@ -40,11 +40,11 @@
 }
 
 .x_nav_item:hover {
-    color: #2c6145;
+    color: #213448;
 }
 
 .x_active {
-    color: #2c6145;
+    color: #213448;
     font-weight: 600;
 }
 
@@ -490,7 +490,7 @@
   
   .x_testimonial_card {
     background: white;
-    border: 1px solid #2c6145;
+    border: 1px solid #213448;
     border-radius: 8px;
     padding: 2rem;
     text-align: center;
@@ -527,7 +527,7 @@
   .x_quote_left,
   .x_quote_right {
     font-size: 40px;
-    color: #4a9473;
+    color: #213448;
     font-family: Georgia, serif;
     position: absolute;
     line-height: 1;
@@ -586,7 +586,7 @@
   
   .x_testimonial_slider .swiper-button-next,
   .x_testimonial_slider .swiper-button-prev {
-    color: #285641;
+    color: #213448;
     width: 45px;
     height: 45px;
     background: white;
@@ -609,7 +609,7 @@
 
   .x_testimonial_slider .swiper-button-next:hover,
   .x_testimonial_slider .swiper-button-prev:hover {
-    background: #285641;
+    background: #213448;
     color: white;
     transform: translateY(-2px);
     transition: all 0.3s ease;
@@ -627,7 +627,7 @@
 }
 
 .x_testimonial_subtitle {
-  color: #285641;
+  color: #213448;
   font-weight: 500;
   display: block;
   margin-bottom: 8px;
@@ -639,7 +639,7 @@
   content: "—";
   display: inline-block;
   margin: 0 10px;
-  color: #285641;
+  color: #213448;
 }
 
 .x_testimonial_title {
@@ -671,7 +671,7 @@
 }
 
 .x_title-highlight {
-    color: #285641;
+    color: #213448;
 }
 
 .x_why_features {
@@ -697,14 +697,14 @@
 
 .x_feature_icon {
     font-size: 2.5rem;
-    color: #285641;
+    color: #213448;
     margin-bottom: 20px;
     transition: all 0.3s ease;
 }
 
 .x_feature_card:hover .x_feature_icon {
     transform: scale(1.1);
-    color: #2c6145;
+    color: #213448;
 }
 
 .x_feature_title {
@@ -759,7 +759,8 @@
 
 /* Subscribe Section Styles */
 .x_subscribe_section {
-    background-image: url("../image/bgsubscribe.png");
+    /* background-image: url("../image/bgsubscribe.png"); */
+    background-color: #d4dfeb;
     padding: 0;
     margin: 40px 20px;
     border-radius: 15px;
@@ -820,7 +821,7 @@
 
 .x_subscribe_button {
     padding: 12px 25px;
-    background-color: #2c6145;
+    background-color: #213448;
     color: white;
     border: none;
     border-radius: 25px;
@@ -971,7 +972,7 @@
 }
 
 .x_get_to_know {
-    color: #2c6145;
+    color: #213448;
     font-size: 16px;
     margin-bottom: 15px;
     font-weight: 500;
@@ -986,7 +987,7 @@
 }
 
 .x_provider_text {
-    color: #2c6145;
+    color: #213448;
 }
 
 .x_about_description {
@@ -1058,7 +1059,7 @@
     right: -20px;
     width: 180px;
     height: 180px;
-    background: #2c6145;
+    background: #213448;
     opacity: 0.1;
     clip-path: polygon(0 0, 100% 100%, 100% 0);
     z-index: 1;
@@ -1104,7 +1105,7 @@
 .x_years {
     font-size: 42px;
     font-weight: 700;
-    color: #2c6145;
+    color: #213448;
     display: block;
     line-height: 1;
     margin-bottom: 5px;
@@ -1303,7 +1304,7 @@
 }
 
 .x_info_icon {
-    color: #2c6145;
+    color: #213448;
     font-size: 20px;
 }
 
@@ -1397,7 +1398,7 @@
 }
 
 .x_submit_button {
-    background: #2c6145;
+    background: #213448;
     color: white;
     padding: 15px 40px;
     border: none;

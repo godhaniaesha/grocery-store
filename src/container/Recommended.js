@@ -199,7 +199,7 @@ function Recommended(props) {
                         {categories.map((category, index) => (
                             <button
                                 key={index}
-                                className={`btn ${selectedCategory === category ? 'btn-success' : 'btn-outline-secondary'}`}
+                                className={`z_category_btn ${selectedCategory === category ? 'z_category_btn_active' : 'z_category_btn_inactive'}`}
                                 onClick={() => setSelectedCategory(category)}
                             >
                                 {categoryDisplayNames[category]}

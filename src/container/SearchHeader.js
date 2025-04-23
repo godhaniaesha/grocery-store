@@ -461,7 +461,7 @@ export default function SearchHeader() {
   };
   return (
     <>
-      <header className="sticky-top shadow-sm" style={{"backgroundColor":"#2c6145"}}>
+      <header className="sticky-top shadow-sm" style={{"backgroundColor":"#213448"}}>
         <div className="container-sm text-white">
           <nav className="navbar navbar-expand-lg navbar-dark py-2 d-flex justify-content-between align-items-center">
             {/* ==== LEFT: LOGO & MENU ==== */}

@@ -15,12 +15,12 @@
     position: relative;
     overflow: hidden;
     transition: all 0.4s ease;
-    box-shadow: 0 4px 16px #2c61451f;
+    box-shadow: 0 4px 16px #2134481f;
 }
 
 .main-image-container:hover {
     transform: scale(1.02);
-    box-shadow: 0 8px 24px #2c61453b;
+    box-shadow: 0 8px 24px #2134483b;
 }
 
 .image-actions {
@@ -33,7 +33,7 @@
 }
 
 .action-btn {
-    background: #2c6145;
+    background: #213448;
     border: none;
     border-radius: 50%;
     width: 40px;
@@ -102,7 +102,7 @@
     overflow-x: auto;
     padding: 1.5rem 0;
     scrollbar-width: thin;
-    scrollbar-color: #2c6145 #f1f1f1;
+    scrollbar-color: #213448 #f1f1f1;
 }
 
 .thumbnail-container::-webkit-scrollbar {
@@ -115,7 +115,7 @@
 }
 
 .thumbnail-container::-webkit-scrollbar-thumb {
-    background: #2c6145;
+    background: #213448;
     border-radius: 10px;
 }
 
@@ -131,13 +131,13 @@
 }
 
 .thumbnail-image:hover {
-    border-color: #2c6145;
+    border-color: #213448;
     transform: translateY(-4px);
     box-shadow: 0 4px 12px rgba(40, 167, 69, 0.15);
 }
 
 .thumbnail-image.active {
-    border-color: #2c6145;
+    border-color: #213448;
     box-shadow: 0 4px 12px rgba(40, 167, 69, 0.2);
 }
 
@@ -154,7 +154,7 @@
     margin-bottom: 1.5rem;
     font-weight: 700;
     line-height: 1.2;
-    background: linear-gradient(120deg, #2c6145, #3a7d5d);
+    background: linear-gradient(120deg, #213448, #3a7d5d);
     background-clip: text;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
@@ -162,7 +162,7 @@
 
 .product-price {
     font-size: 2.25rem;
-    color: #2c6145;
+    color: #213448;
     font-weight: 600;
     margin: 1.5rem 0;
     display: flex;
@@ -181,7 +181,7 @@
 }
 
 .discount-badge {
-    background: linear-gradient(135deg, #2c6145, #3a7d5d);
+    background: linear-gradient(135deg, #213448, #3a7d5d);
     color: white;
     padding: 0.35rem 1rem;
     border-radius: 25px;
@@ -220,7 +220,7 @@
 }
 
 .quantity-btn {
-    background: linear-gradient(135deg, #2c6145, #3a7d5d);
+    background: linear-gradient(135deg, #213448, #3a7d5d);
     border: none;
     border-radius: 50%;
     width: 40px;
@@ -264,7 +264,7 @@
 
 .quantity-input:focus {
     outline: none;
-    border-color: #2c6145;
+    border-color: #213448;
     box-shadow: 0 0 0 3px rgba(44, 97, 69, 0.1);
 }
 
@@ -275,7 +275,7 @@
     font-size: 1.3rem;
     font-weight: 600;
     color: white;
-    background: linear-gradient(135deg, #2c6145, #3a7d5d);
+    background: linear-gradient(135deg, #213448, #3a7d5d);
     border: none;
     border-radius: 15px;
     display: flex;
@@ -336,7 +336,7 @@
 }
 
 .color-btn.active {
-    border-color: #2c6145;
+    border-color: #213448;
     transform: scale(1.1);
 }
 
@@ -355,7 +355,7 @@
 .size-guide-btn {
     background: none;
     border: none;
-    color: #2c6145;
+    color: #213448;
     font-weight: 500;
     cursor: pointer;
     transition: color 0.3s ease;
@@ -388,13 +388,13 @@
 }
 
 .size-btn:hover {
-    border-color: #2c6145;
-    color: #2c6145;
+    border-color: #213448;
+    color: #213448;
 }
 
 .size-btn.active {
-    background: #2c6145;
-    border-color: #2c6145;
+    background: #213448;
+    border-color: #213448;
     color: white;
 }
 
@@ -425,7 +425,7 @@
 }
 
 .meta-item svg {
-    color: #2c6145;
+    color: #213448;
     font-size: 1.2rem;
 }
 
@@ -445,7 +445,7 @@
 
 .nutrition-title {
     font-size: 1.5rem;
-    color: #2c6145;
+    color: #213448;
     margin-bottom: 1.5rem;
     font-weight: 600;
 }
@@ -472,7 +472,7 @@
 .nutrition-value {
     font-size: 1.25rem;
     font-weight: 600;
-    color: #2c6145;
+    color: #213448;
     margin-bottom: 0.5rem;
 }
 
@@ -689,7 +689,7 @@
 }
 
 .theme-select:focus {
-    border-color: #2c6145;
+    border-color: #213448;
     box-shadow: 0 0 0 2px rgba(40, 167, 69, 0.25);
 }
 
@@ -746,15 +746,15 @@
 }
 
 .weight-btn:hover {
-    border-color: #2c6145;
+    border-color: #213448;
     transform: translateY(-2px);
     box-shadow: 0 4px 12px rgba(44, 97, 69, 0.15);
 }
 
 .weight-btn.active {
-    background: #2c6145;
+    background: #213448;
     color: white;
-    border-color: #2c6145;
+    border-color: #213448;
     box-shadow: 0 4px 12px rgba(44, 97, 69, 0.2);
 }
 @media (min-width: 768px) {
