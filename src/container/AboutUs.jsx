@@ -3,6 +3,7 @@ import { FaLeaf, FaCarrot } from 'react-icons/fa';
 import leafIcon from '../image/leaf.png';
 import Testimonial from './Testimonial';
 import WhyUs from './WhyUs';
+import testImage from '../image/testimg.png';
 
 function AboutUs() {
   return (
@@ -66,7 +67,7 @@ function AboutUs() {
                 </svg>
               </div>
               <img 
-                src="https://img.freepik.com/free-photo/fresh-vegetables-fruits-market_181624-7653.jpg" 
+                src={testImage}
                 alt="Fresh Produce" 
                 className="x_main_image" 
               />

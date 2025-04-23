@@ -23,19 +23,27 @@ import ProductDetail from './container/ProductDetail';
 import SimilarProduct from './container/SimilarProduct';
 import Cart from './container/Cart';
 import Wishlist from './components/Wishlist';
+import ContactUs from './container/ContactUs';
+import CheckOut from './container/CheckOut';
+import CustomCursor from './components/CustomCursor';
 function App() {
   return (
     <BrowserRouter>
+          <CustomCursor />
       <Routes>
         {/* aesha */}
         <Route path="*" element={<Home />} />
         <Route path="/Menuheader" element={<Menuheader />} />
         <Route path="/Testimonial" element={<Testimonial />} />
         <Route path="/HomeMain" element={<HomeMain />} />
-        <Route path="/Recommended" element={<Recommended />} />
+        <Route path="/Recommended" element={<Recommended />} />        
         <Route path="/WhyUs" element={<WhyUs />} />
         <Route path="/Subscribe" element={<Subscribe />} />
         <Route path="/AboutUs" element={<AboutUs />} />
+        <Route path="/ContactUs" element={<ContactUs />} />
+        <Route path="/CheckOut" element={<CheckOut />} />
+
+
 
         {/* denisha */}
         <Route path="/Searchheader" element={<SearchHeader />} />

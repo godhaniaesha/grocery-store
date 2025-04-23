@@ -4,7 +4,13 @@ import { Autoplay } from 'swiper/modules';
 import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/autoplay';
-import userImage from '../image/563244-natural-history-museum-london-1920x1080-wallpaper.jpg';
+import userImage from '../image/user (1).jpg';
+import userImage1 from '../image/user (2).jpg';
+import userImage2 from '../image/user (3).jpg';
+import userImage3 from '../image/user (4).jpg';
+import userImage4 from '../image/user (5).jpg';
+
+
 
 export default function Testimonial() {
     const testimonials = [
@@ -17,25 +23,25 @@ export default function Testimonial() {
         {
           id: 2,
           name: "John Smith",
-          image: userImage,
+          image: userImage1,
           text: "Lorem ipsum is simply dummy text the printing and typesetting industry dummy text ever since."
         },
         {
           id: 3,
           name: "Emma Wilson",
-          image: userImage,
+          image: userImage2,
           text: "Lorem ipsum is simply dummy text the printing and typesetting industry dummy text ever since."
         },
         {
           id: 4,
           name: "Michael Brown",
-          image: userImage,
+          image: userImage3,
           text: "Lorem ipsum is simply dummy text the printing and typesetting industry dummy text ever since."
         },
         {
           id: 5,
           name: "Sarah Davis",
-          image: userImage,
+          image: userImage4,
           text: "Lorem ipsum is simply dummy text the printing and typesetting industry dummy text ever since."
         }
       ];
