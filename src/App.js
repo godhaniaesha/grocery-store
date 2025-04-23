@@ -23,9 +23,13 @@ import ProductDetail from './container/ProductDetail';
 import SimilarProduct from './container/SimilarProduct';
 import Cart from './container/Cart';
 import Wishlist from './components/Wishlist';
+import FAQ from './components/FAQ';
 function App() {
   return (
+   <>
+   
     <BrowserRouter>
+    <SearchHeader></SearchHeader>
       <Routes>
         {/* aesha */}
         <Route path="*" element={<Home />} />
@@ -45,6 +49,7 @@ function App() {
         <Route path="/SimilarProduct" element={<SimilarProduct />} />
         <Route path="/cart" element={<Cart />} />
         <Route path="/wishlist" element={<Wishlist />} />
+        <Route path="/FAQ" element={<FAQ />} />
 
 
         {/* krupali */}
@@ -54,7 +59,9 @@ function App() {
         <Route path="/Bestsellers" element={<Bestseller />} />
         <Route path="/Shop" element={<Shop />} />
       </Routes>
+      <Footer></Footer>
     </BrowserRouter>
+   </>
   );
 }
 

@@ -16,7 +16,7 @@ import Subscribe from '../container/Subscribe';
 function home(props) {
     return (
         <>
-        <SearchHeader></SearchHeader>
+        {/* <SearchHeader></SearchHeader> */}
         {/* <Menuheader></Menuheader> */}
         <FirstSlider></FirstSlider>
         <PopularCategories></PopularCategories>        
@@ -29,7 +29,7 @@ function home(props) {
         <Testimonial></Testimonial>
         <Subscribe></Subscribe>
         
-        <Footer></Footer>
+        {/* <Footer></Footer> */}
 
         </>
     );

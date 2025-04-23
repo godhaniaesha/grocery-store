@@ -64,8 +64,7 @@ const ProductDetail = () => {
 
     return (
         <>
-            <SearchHeader />
-            <Container className="product-detail-container">
+            <Container className="db_product-main product-detail-container">
                 <Row>
                     <Col md={6} className="product-images" >
                         <motion.div
@@ -280,7 +279,6 @@ const ProductDetail = () => {
                 </Row>
             </Container>
             <SimilarProduct></SimilarProduct>
-            <Footer />
         </>
     );
 };

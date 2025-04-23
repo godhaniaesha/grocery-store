@@ -1,9 +1,9 @@
-.swiper {
+.db_popular .swiper {
     padding: 20px 10px;
   }
   
-  .swiper-button-next,
-  .swiper-button-prev {
+  .db_popular .swiper-button-next,
+  .db_popular .swiper-button-prev {
     color: #198754;
     width: 35px;
     height: 35px;
@@ -12,8 +12,8 @@
     box-shadow: 0 2px 5px rgba(0,0,0,0.1);
   }
   
-  .swiper-button-next:after,
-  .swiper-button-prev:after {
+  .db_popular .swiper-button-next:after,
+  .db_popular .swiper-button-prev:after {
     font-size: 18px;
   }
   
@@ -123,7 +123,7 @@
     box-shadow: 0 0 10px rgba(40,167,69,0.3);
   }
   
-  .slider-nav button {
+  .db_popular .slider-nav button {
     width: 32px;
     height: 32px;
     display: flex;
@@ -134,12 +134,12 @@
     color: #198754;
   }
   
-  .slider-nav button:hover {
+  .db_popular .slider-nav button:hover {
     background-color: #198754;
     color: white;
   }
   
-  .slider-nav i {
+  .db_popular .slider-nav i {
     font-size: 12px;
   }
   

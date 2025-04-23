@@ -6,6 +6,7 @@ import Walnut from '../image/z_accets/Walnuts1.png';
 import Cashews from '../image/z_accets/Cashews3.png';
 import Image from '../image/z_accets/Dates 4.png';
 import '../styles/Z_style.css';
+import '../styles/ProductDetail.css';
 import {
     FaShoppingCart, FaHeart, FaEye, FaStar,
     FaTimes, FaMinus, FaPlus, FaChevronRight

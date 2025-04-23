@@ -7,6 +7,7 @@ import '../styles/x_app.css'
 import { GrFormClose } from 'react-icons/gr';
 import { HiMenuAlt2 } from 'react-icons/hi';
 import { IoIosArrowDown } from 'react-icons/io';
+import { Link } from 'react-router-dom';
 
 export default function SearchHeader() {
   const [showMobileSearch, setShowMobileSearch] = useState(false);
@@ -527,7 +528,7 @@ export default function SearchHeader() {
 
                 {/* Wishlist */}
                 <div className="text-center position-relative">
-                  <button className="btn bg-transparent p-0 border-0 d-flex justify-content-center w-100 position-relative">
+                  <Link to="/wishlist" className="btn bg-transparent p-0 border-0 d-flex justify-content-center w-100 position-relative">
                     <FaHeart size={22} className="text-white" />
                     <span
                       className="badge bg-dark text-white position-absolute top-0 start-100 translate-middle rounded-circle"
@@ -535,12 +536,12 @@ export default function SearchHeader() {
                     >
                       3
                     </span>
-                  </button>
+                  </Link>
                 </div>
 
                 {/* Cart */}
                 <div className="text-center position-relative">
-                  <button className="btn bg-transparent p-0 border-0 d-flex justify-content-center w-100 position-relative">
+                  <Link to="/cart" className="btn bg-transparent p-0 border-0 d-flex justify-content-center w-100 position-relative">
                     <FaShoppingCart size={22} className="text-white" />
                     <span
                       className="badge bg-dark text-white position-absolute top-0 start-100 translate-middle rounded-circle"
@@ -548,7 +549,7 @@ export default function SearchHeader() {
                     >
                       0
                     </span>
-                  </button>
+                  </Link>
                 </div>
 
                 <div className="text-center d-md-none d-block position-relative">
