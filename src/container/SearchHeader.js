@@ -10,6 +10,7 @@ import { IoIosArrowDown, IoIosEye, IoIosEyeOff, IoIosLogIn, IoMdLogIn } from 're
 import { Formik, Form } from 'formik';
 import * as Yup from 'yup';
 import { FiShoppingBag } from "react-icons/fi";
+import { Link } from "react-router-dom";
 
 export default function SearchHeader() {
   const [showMobileSearch, setShowMobileSearch] = useState(false);
