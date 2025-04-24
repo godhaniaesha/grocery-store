@@ -576,7 +576,7 @@ function Bestseller(props) {
                   transition: "transform 0.5s ease-in-out",
                 }}
               >
-                <div className="row">
+                <div className="row my-2">
                   {getVisibleProducts().map((product, index) => (
                     <div key={index} className="col-lg-2 col-md-4 col-sm-6">
                       <Card className="z_product-card">

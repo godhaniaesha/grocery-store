@@ -495,7 +495,7 @@
     padding: 2rem;
     text-align: center;
     position: relative;
-    margin-top: 50px;
+    margin-top: 85px;
     box-shadow: 0 5px 20px rgba(0,0,0,0.05);
     transition: all 0.3s ease;
   }
@@ -569,6 +569,7 @@
     transform: scale(0.85);
     transition: all 0.4s ease;
     filter: blur(1px);
+    margin-bottom: 35px;
   }
   
   .x_testimonial_slider .swiper-slide-active {
@@ -618,6 +619,11 @@
   .x_testimonial_slider .swiper-slide-active {
     opacity: 1 !important;
     transform: scale(1.1) !important;
+}
+
+.x_testimonial_slider.swiper-backface-hidden .swiper-slide {
+    transform: scale(0.95) ;
+    backface-visibility: hidden;
 }
   /* Testimonial styles end */
 
@@ -1428,11 +1434,11 @@
         gap: 20px;
     }
     
-    .x_social_links {
+    /* .x_social_links {
         width: 100%;
         justify-content: center;
         margin-top: 10px;
-    }
+    } */
 }
 
 @media (max-width: 768px) {
@@ -1440,15 +1446,15 @@
         height: 350px;
     }
 
-    .x_info_container {
+    /* .x_info_container {
         flex-direction: column;
         text-align: center;
-    }
+    } */
 
-    .x_info_item {
+    /* .x_info_item {
         width: 100%;
         justify-content: center;
-    }
+    } */
 
     .x_form_row {
         grid-template-columns: 1fr;
@@ -1490,7 +1496,7 @@
 }
 
 .x_billing_form {
-    display: flex;
+     display: flex;
     flex-direction: column;
     gap: 20px;
 }
@@ -1699,6 +1705,7 @@
     padding: 30px;
     border-radius: 8px;
     margin-top: 30px;
+    margin-bottom: 30px;
 }
 
 .x_payment_method {

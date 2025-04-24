@@ -29,49 +29,7 @@ function ContactUs() {
     return (
         <>
             <div className="x_contact_section a_header_container">
-                <div className="x_map_container">
-                    <iframe 
-                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3671.939248817518!2d72.55442867500275!3d23.026077779157786!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x395e84f521440d4b%3A0x6853ee97a9a2996b!2sNavrangpura%2C%20Ahmedabad%2C%20Gujarat%20380009!5e0!3m2!1sen!2sin!4v1709200251789!5m2!1sen!2sin"
-                        width="100%" 
-                        height="400" 
-                        style={{ border: 0 }} 
-                        allowFullScreen="" 
-                        loading="lazy" 
-                        referrerPolicy="no-referrer-when-downgrade"
-                    ></iframe>
-                </div>
-
-                <div className="x_contact_info_bar">
-                    <div className="x_info_container">
-                        <div className="x_info_item">
-                            <FaPhoneAlt className="x_info_icon" />
-                            <div className="x_info_content">
-                                <span className="x_info_label">Have any question?</span>
-                                <span className="x_info_value">+ 92 ( 307 ) 68 - 06860</span>
-                            </div>
-                        </div>
-                        <div className="x_info_item">
-                            <FaEnvelope className="x_info_icon" />
-                            <div className="x_info_content">
-                                <span className="x_info_label">Write email</span>
-                                <span className="x_info_value">needhelp@company.com</span>
-                            </div>
-                        </div>
-                        <div className="x_info_item">
-                            <FaMapMarkerAlt className="x_info_icon" />
-                            <div className="x_info_content">
-                                <span className="x_info_label">Visit store</span>
-                                <span className="x_info_value">Valentin, Street Road 24, New York</span>
-                            </div>
-                        </div>
-                        <div className="x_social_links">
-                            <a href="#" className="x_social_link"><FaFacebookF /></a>
-                            <a href="#" className="x_social_link"><FaTwitter /></a>
-                            <a href="#" className="x_social_link"><FaPinterestP /></a>
-                            <a href="#" className="x_social_link"><FaInstagram /></a>
-                        </div>
-                    </div>
-                </div>
+                
 
                 <div className="x_contact_form_section">
                     <div className="x_form_container">
@@ -162,8 +120,51 @@ function ContactUs() {
                         </Formik>
                     </div>
                 </div>
+                <div className="x_contact_info_bar">
+                    <div className="x_info_container">
+                        <div className="x_info_item">
+                            <FaPhoneAlt className="x_info_icon" />
+                            <div className="x_info_content">
+                                <span className="x_info_label">Have any question?</span>
+                                <span className="x_info_value">+ 92 ( 307 ) 68 - 06860</span>
+                            </div>
+                        </div>
+                        <div className="x_info_item">
+                            <FaEnvelope className="x_info_icon" />
+                            <div className="x_info_content">
+                                <span className="x_info_label">Write email</span>
+                                <span className="x_info_value">needhelp@company.com</span>
+                            </div>
+                        </div>
+                        <div className="x_info_item">
+                            <FaMapMarkerAlt className="x_info_icon" />
+                            <div className="x_info_content">
+                                <span className="x_info_label">Visit store</span>
+                                <span className="x_info_value">Valentin, Street Road 24, New York</span>
+                            </div>
+                        </div>
+                        {/* <div className="x_social_links">
+                            <a href="#" className="x_social_link"><FaFacebookF /></a>
+                            <a href="#" className="x_social_link"><FaTwitter /></a>
+                            <a href="#" className="x_social_link"><FaPinterestP /></a>
+                            <a href="#" className="x_social_link"><FaInstagram /></a>
+                        </div> */}
+                    </div>
+                </div>
+                <div className="x_map_container mb-lg-5 mb-3">
+                    <iframe 
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3671.939248817518!2d72.55442867500275!3d23.026077779157786!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x395e84f521440d4b%3A0x6853ee97a9a2996b!2sNavrangpura%2C%20Ahmedabad%2C%20Gujarat%20380009!5e0!3m2!1sen!2sin!4v1709200251789!5m2!1sen!2sin"
+                        width="100%" 
+                        height="400" 
+                        style={{ border: 0 }} 
+                        allowFullScreen="" 
+                        loading="lazy" 
+                        referrerPolicy="no-referrer-when-downgrade"
+                    ></iframe>
+                </div>
+
+                
             </div>
-            <Subscribe />
         </>
     );
 }
