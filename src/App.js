@@ -24,6 +24,9 @@ import SimilarProduct from './container/SimilarProduct';
 import Cart from './container/Cart';
 import Wishlist from './components/Wishlist';
 import FAQ from './components/FAQ';
+import PrivacyPolicy from './components/PrivacyPolicy';
+import MyAccount from './components/MyAccount';
+import Order from './container/Order';
 function App() {
   return (
    <>
@@ -50,6 +53,9 @@ function App() {
         <Route path="/cart" element={<Cart />} />
         <Route path="/wishlist" element={<Wishlist />} />
         <Route path="/FAQ" element={<FAQ />} />
+        <Route path="/PrivacyPolicy" element={<PrivacyPolicy />} />
+        <Route path="/MyAccount" element={<MyAccount />} />
+        <Route path="/Order" element={<Order />} />
 
 
         {/* krupali */}

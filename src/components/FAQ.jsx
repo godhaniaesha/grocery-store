@@ -62,8 +62,8 @@ const FAQ = () => {
     };
 
     return (
-        <div className="db_faq">
-            <Container>
+        <div className="db_faq a_header_container">
+           
                 <div className="db_faq_header">
                     <div className="db_faq_header_content">
                         <h1>Frequently Asked Questions</h1>
@@ -125,7 +125,7 @@ const FAQ = () => {
                         </div>
                     )}
                 </div>
-            </Container>
+      
         </div>
     );
 };

@@ -251,11 +251,12 @@
         font-size: 0.8rem;
     }
 
-    .db_faq_question {
+    .db_faq_question,.db_faq_header_content {
         padding: 1rem;
     }
 
     .db_faq_item.active .db_faq_answer {
         padding: 1.2rem;
     }
+    
 }
