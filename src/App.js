@@ -26,10 +26,17 @@ import Wishlist from './components/Wishlist';
 import ContactUs from './container/ContactUs';
 import CheckOut from './container/CheckOut';
 import CustomCursor from './components/CustomCursor';
+import FAQ from './components/FAQ';
+import PrivacyPolicy from './components/PrivacyPolicy';
+import MyAccount from './components/MyAccount';
+import Order from './container/Order';
 function App() {
   return (
+   <>
+   
     <BrowserRouter>
           <CustomCursor />
+    <SearchHeader></SearchHeader>
       <Routes>
         {/* aesha */}
         <Route path="*" element={<Home />} />
@@ -53,6 +60,10 @@ function App() {
         <Route path="/SimilarProduct" element={<SimilarProduct />} />
         <Route path="/cart" element={<Cart />} />
         <Route path="/wishlist" element={<Wishlist />} />
+        <Route path="/FAQ" element={<FAQ />} />
+        <Route path="/PrivacyPolicy" element={<PrivacyPolicy />} />
+        <Route path="/MyAccount" element={<MyAccount />} />
+        <Route path="/Order" element={<Order />} />
 
 
         {/* krupali */}
@@ -62,7 +73,9 @@ function App() {
         <Route path="/Bestsellers" element={<Bestseller />} />
         <Route path="/Shop" element={<Shop />} />
       </Routes>
+      <Footer></Footer>
     </BrowserRouter>
+   </>
   );
 }
 

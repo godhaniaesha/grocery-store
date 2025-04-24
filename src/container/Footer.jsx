@@ -3,12 +3,13 @@ import { Container, Row, Col } from 'react-bootstrap';
 import { FaFacebook, FaTwitter, FaInstagram, FaPhoneAlt, FaEnvelope, FaMapMarkerAlt } from 'react-icons/fa';
 import { FiClock } from 'react-icons/fi';
 import { AiFillHeart } from 'react-icons/ai';
-import '../styles/footer.css'; // You'll need to create this CSS file
+import '../styles/footer.css';
+import { Link } from 'react-router-dom';
 
 const Footer = () => {
   return (
     <footer className="db_footer footer bg-dark text-white py-5">
-      <Container>
+      <div className='a_header_container'>
         <Row className="mb-4">
           <Col lg={3} md={6} className="mb-4 mb-md-0">
             <h5 className="text-uppercase mb-4">Fresh Market</h5>
@@ -27,22 +28,22 @@ const Footer = () => {
             <h5 className="text-uppercase mb-4">Quick Links</h5>
             <ul className="list-unstyled">
               <li className="mb-2">
-                <a href="#" className="text-white text-decoration-none">Home</a>
+                <Link to="/" className="text-white text-decoration-none">Home</Link>
               </li>
               <li className="mb-2">
-                <a href="#" className="text-white text-decoration-none">Shop</a>
+                <Link to="/Shop" className="text-white text-decoration-none">Shop</Link>
               </li>
               <li className="mb-2">
-                <a href="#" className="text-white text-decoration-none">Categories</a>
+                <Link to="/PopularCategories" className="text-white text-decoration-none">Categories</Link>
               </li>
               <li className="mb-2">
-                <a href="#" className="text-white text-decoration-none">Special Offers</a>
+                <Link to="/Bestsellers" className="text-white text-decoration-none">Special Offers</Link>
               </li>
               <li className="mb-2">
-                <a href="#" className="text-white text-decoration-none">About Us</a>
+                <Link to="/AboutUs" className="text-white text-decoration-none">About Us</Link>
               </li>
               <li className="mb-2">
-                <a href="#" className="text-white text-decoration-none">Contact</a>
+                <Link to="/FAQ" className="text-white text-decoration-none">Contact</Link>
               </li>
             </ul>
           </Col>
@@ -51,22 +52,22 @@ const Footer = () => {
             <h5 className="text-uppercase mb-4">Customer Service</h5>
             <ul className="list-unstyled">
               <li className="mb-2">
-                <a href="#" className="text-white text-decoration-none">My Account</a>
+                <Link to="/MyAccount" className="text-white text-decoration-none">My Account</Link>
               </li>
               <li className="mb-2">
-                <a href="#" className="text-white text-decoration-none">Order Tracking</a>
+                <Link to="/Order" className="text-white text-decoration-none">Order Tracking</Link>
               </li>
               <li className="mb-2">
-                <a href="#" className="text-white text-decoration-none">Wishlist</a>
+                <Link to="/wishlist" className="text-white text-decoration-none">Wishlist</Link>
               </li>
               <li className="mb-2">
-                <a href="#" className="text-white text-decoration-none">Shipping Policy</a>
+                <Link to="/PrivacyPolicy" className="text-white text-decoration-none">Shipping Policy</Link>
               </li>
               <li className="mb-2">
-                <a href="#" className="text-white text-decoration-none">Return Policy</a>
+                <Link to="/PrivacyPolicy" className="text-white text-decoration-none">Return Policy</Link>
               </li>
               <li className="mb-2">
-                <a href="#" className="text-white text-decoration-none">FAQs</a>
+                <Link to="/FAQ" className="text-white text-decoration-none">FAQs</Link>
               </li>
             </ul>
           </Col>
@@ -105,7 +106,7 @@ const Footer = () => {
             </p>
           </Col>
         </Row>
-      </Container>
+      </div>
     </footer>
   );
 };
