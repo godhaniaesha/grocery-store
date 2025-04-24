@@ -23,6 +23,7 @@ import ProductDetail from './container/ProductDetail';
 import SimilarProduct from './container/SimilarProduct';
 import Cart from './container/Cart';
 import Wishlist from './components/Wishlist';
+import Register from './container/Register';
 function App() {
   return (
     <BrowserRouter>
@@ -53,6 +54,7 @@ function App() {
         <Route path="/Advertisement" element={<AdvertiseCards />} />
         <Route path="/Bestsellers" element={<Bestseller />} />
         <Route path="/Shop" element={<Shop />} />
+        <Route path="/Register" element={<Register />} />
       </Routes>
     </BrowserRouter>
   );
