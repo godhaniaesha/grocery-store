@@ -1,0 +1,36 @@
+.price-range-slider {
+    padding: 10px 0;
+}
+
+.price-range-slider .c-range-slider {
+    height: 6px;
+    background: #e9ecef;
+    border-radius: 3px;
+}
+
+.price-range-slider .c-range-slider__track {
+    background: linear-gradient(to right, #2c6145, #e9ecef);
+    height: 6px;
+    border-radius: 3px;
+}
+
+.price-range-slider .c-range-slider__thumb {
+    width: 20px;
+    height: 20px;
+    background: #2c6145;
+    border: 2px solid #fff;
+    box-shadow: 0 2px 6px rgba(44, 97, 69, 0.3);
+    transition: all 0.3s ease;
+}
+
+.price-range-slider .c-range-slider__thumb:hover {
+    transform: scale(1.1);
+    box-shadow: 0 3px 8px rgba(44, 97, 69, 0.4);
+}
+
+.price-range-slider .Z_price_display {
+    text-align: center;
+    margin-top: 10px;
+    color: #6c757d;
+    font-size: 14px;
+}
