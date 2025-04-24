@@ -1838,6 +1838,8 @@
   left: 0% !important;
   background-color: #2c6145 !important;
   color: white!important;
+
+  
 }.Z_range_input {
     position: absolute;
     width: 100%;
@@ -1886,4 +1888,152 @@
     background: #2c6145;
     border-radius: 5px;
     z-index: 1;
+}
+
+/* Price Range Slider Styles */
+.z_price-range-wrapper {
+    position: relative;
+    width: 100%;
+    padding: 10px 0;
+}
+
+.z_multi-range {
+    position: relative;
+    height: 30px;
+}
+
+.z_range-input {
+    position: absolute;
+    width: 100%;
+    height: 25px;
+    background: none;
+    pointer-events: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+}
+
+.z_range-input::-webkit-slider-thumb {
+    height: 20px;
+    width: 20px;
+    border-radius: 50%;
+    border: 2px solid #fff;
+    background: #2c6145;
+    pointer-events: auto;
+    -webkit-appearance: none;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.3);
+    cursor: pointer;
+}
+
+.z_range-input::-moz-range-thumb {
+    height: 20px;
+    width: 20px;
+    border-radius: 50%;
+    border: 2px solid #fff;
+    background: #2196F3;
+    pointer-events: auto;
+    -moz-appearance: none;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.3);
+    cursor: pointer;
+}
+
+.z_slider {
+    position: absolute;
+    width: 100%;
+    height: 5px;
+    top: 50%;
+    transform: translateY(-50%);
+    border-radius: 5px;
+    pointer-events: none;
+}
+
+.z_slider .z_track {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: #E0E0E0;
+    border-radius: 5px;
+}
+
+.z_slider .z_range {
+    position: absolute;
+    height: 100%;
+    background: #2c6145 !important;
+    border-radius: 5px;
+}
+
+.z_price_range {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 20px;
+    font-weight: 500;
+}
+
+.z_price_range span {
+    padding: 5px 10px;
+    background: #f5f5f5;
+    border-radius: 4px;
+    font-size: 14px;
+}
+
+/* Ensure both thumbs are visible */
+.z_range-input-left {
+    z-index: 2;
+}
+
+.z_range-input-right {
+    z-index: 1;
+}
+
+/* Form.Range slider styles */
+.form-range::-webkit-slider-thumb {
+    background: #2c6145;
+    border: 2px solid #fff;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    cursor: pointer;
+    -webkit-appearance: none;
+    margin-top: -7px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.3);
+}
+
+.form-range::-moz-range-thumb {
+    background: #2c6145;
+    border: 2px solid #fff;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    cursor: pointer;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.3);
+}
+
+.form-range::-webkit-slider-runnable-track {
+    width: 100%;
+    height: 6px;
+    background: #e9ecef;
+    border-radius: 3px;
+    cursor: pointer;
+}
+
+.form-range::-moz-range-track {
+    width: 100%;
+    height: 6px;
+    background: #e9ecef;
+    border-radius: 3px;
+    cursor: pointer;
+}
+
+/* Progress/filled portion styles */
+.form-range::-webkit-slider-progress {
+    background: #2c6145;
+    height: 6px;
+    border-radius: 3px;
+}
+
+.form-range::-moz-range-progress {
+    background: #2c6145;
+    height: 6px;
+    border-radius: 3px;
 }

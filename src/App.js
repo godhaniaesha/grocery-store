@@ -30,6 +30,7 @@ import FAQ from './components/FAQ';
 import PrivacyPolicy from './components/PrivacyPolicy';
 import MyAccount from './components/MyAccount';
 import Order from './container/Order';
+import Register from './container/Register';
 function App() {
   return (
    <>
@@ -72,6 +73,7 @@ function App() {
         <Route path="/Advertisement" element={<AdvertiseCards />} />
         <Route path="/Bestsellers" element={<Bestseller />} />
         <Route path="/Shop" element={<Shop />} />
+        <Route path="/Register" element={<Register />} />
       </Routes>
       <Footer></Footer>
     </BrowserRouter>
