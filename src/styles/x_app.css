@@ -378,12 +378,12 @@
 /* Second menu item (Oil & Ghee) */
 .x_nav_item[data-category="Oil & Ghee"]:hover,
 .x_nav_item[data-category="Oil & Ghee"].x_active {
-    background-color: #85c0fb;
+    background-color: #be7b66;
     color: #fff;
 }
 
 .x_nav_item[data-category="Oil & Ghee"] .x_dropdown_title {
-    color: #85c0fb;
+    color: #be7b66;
 }
 
 /* Third menu item ( Spices & Masala ) */
@@ -400,46 +400,46 @@
 /* Fourth menu item (Dairy & Bakery) */
 .x_nav_item[data-category="Dairy & Bakery"]:hover,
 .x_nav_item[data-category="Dairy & Bakery"].x_active {
-    background-color: #c4c72c;
+    background-color: #b9615e;
     color: #fff;
 }
 
 .x_nav_item[data-category="Dairy & Bakery"] .x_dropdown_title {
-    color: #c4c72c;
+    color: #b9615e;
 }
 
 
 /* Fifth menu item ( Fruits & Vegetables ) */
 .x_nav_item[data-category="Fruits & Vegetables"]:hover,
 .x_nav_item[data-category="Fruits & Vegetables"].x_active {
-    background-color: #4A102A;
+    background-color: #9F8383;
     color: #fff;
 }
 
 .x_nav_item[data-category="Fruits & Vegetables"] .x_dropdown_title {
-    color: #4A102A;
+    color: #9F8383;
 }
 
 /* Sixth menu item (Beverages) */
 .x_nav_item[data-category="Beverages"]:hover,
 .x_nav_item[data-category="Beverages"].x_active {
-    background-color: #fe923b;
+    background-color: #919a7d;
     color: #fff;
 }
 
 .x_nav_item[data-category="Beverages"] .x_dropdown_title {
-    color: #fe923b;
+    color: #919a7d;
 }
 
 /* Seventh menu item (Snacks & Packaged Foods) */
 .x_nav_item[data-category="Snacks & Packaged Foods"]:hover,
 .x_nav_item[data-category="Snacks & Packaged Foods"].x_active {
-    background-color: #bb4961;
+    background-color: #aa89a6;
     color: #fff;
 }
 
 .x_nav_item[data-category="Snacks & Packaged Foods"] .x_dropdown_title {
-    color: #bb4961;
+    color: #aa89a6;
 
 }.x_offcanvas_dropdown {
     padding: 10px;
