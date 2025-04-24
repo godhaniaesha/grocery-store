@@ -360,6 +360,10 @@
     padding: 4px 0;
 }
 
+.x_nav_item{
+    font-weight: 600;
+}
+
 /* First menu item (Grains & Pulses) */
 .x_nav_item[data-category="Grains & Pulses"]:hover,
 .x_nav_item[data-category="Grains & Pulses"].x_active {
@@ -385,35 +389,35 @@
 /* Third menu item ( Spices & Masala ) */
 .x_nav_item[data-category="Spices & Masala"]:hover,
 .x_nav_item[data-category="Spices & Masala"].x_active {
-    background-color: #b2d61f;
+    background-color: #4c7481;
     color: #fff;
 }
 
 .x_nav_item[data-category="Spices & Masala"] .x_dropdown_title {
-    color: #b2d61f;
+    color: #4c7481;
 }
 
 /* Fourth menu item (Dairy & Bakery) */
 .x_nav_item[data-category="Dairy & Bakery"]:hover,
 .x_nav_item[data-category="Dairy & Bakery"].x_active {
-    background-color: #feb82a;
+    background-color: #c4c72c;
     color: #fff;
 }
 
 .x_nav_item[data-category="Dairy & Bakery"] .x_dropdown_title {
-    color: #feb82a;
+    color: #c4c72c;
 }
 
 
 /* Fifth menu item ( Fruits & Vegetables ) */
 .x_nav_item[data-category="Fruits & Vegetables"]:hover,
 .x_nav_item[data-category="Fruits & Vegetables"].x_active {
-    background-color: #cc81e6;
+    background-color: #4A102A;
     color: #fff;
 }
 
 .x_nav_item[data-category="Fruits & Vegetables"] .x_dropdown_title {
-    color: #cc81e6;
+    color: #4A102A;
 }
 
 /* Sixth menu item (Beverages) */
@@ -837,9 +841,6 @@
     transition: all 0.3s ease;
 }
 
-.x_subscribe_button:hover {
-    background-color: #2a9d64;
-}
 
 .x_subscribe_images {
     position: absolute;
