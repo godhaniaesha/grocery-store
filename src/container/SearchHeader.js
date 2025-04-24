@@ -613,7 +613,7 @@ export default function SearchHeader() {
 
   return (
     <>
-      <header className="sticky-top shadow-sm" style={{ "backgroundColor": "#2c6145" }}>
+      <header className="sticky-top shadow-sm" style={{ "backgroundColor": "#213448" }}>
         <div className="container-sm text-white">
           <nav className="navbar navbar-expand-lg navbar-dark py-2 d-flex justify-content-between align-items-center">
             {/* ==== LEFT: LOGO & MENU ==== */}
@@ -1232,7 +1232,7 @@ export default function SearchHeader() {
         }
 
         .dropdown-item:hover {
-          background-color: #2c6145;
+          background-color: #213448;
           color: white;
         }
 
@@ -1331,7 +1331,7 @@ export default function SearchHeader() {
         }
 
         .close-btn:hover svg {
-          color: #2c6145;
+          color: #213448;
         }
 
         .view-content {
@@ -1382,7 +1382,7 @@ export default function SearchHeader() {
         }
 
         .form-input:focus {
-          border-color: #2c6145;
+          border-color: #213448;
           outline: none;
         }
 
@@ -1448,7 +1448,7 @@ export default function SearchHeader() {
           font-size: 14px;
           cursor: pointer;
           transition: background-color 0.3s;
-          background-color: #2c6145;
+          background-color: #213448;
           color: white;
         }
 
@@ -1487,12 +1487,14 @@ export default function SearchHeader() {
           font-size: 14px;
           cursor: pointer;
           transition: background-color 0.3s;
-          background-color: #2c6145;
+          background-color: #213448;
           color: white;
         }
 
         .submit-btn:hover {
-          background-color: rgb(71, 143, 104);
+          background-color: #e9f1f6;
+          color: #000;
+          border: 1px solid #213448;
         }
 
         .password-guidelines {
@@ -1513,7 +1515,7 @@ export default function SearchHeader() {
           content: "•";
           position: absolute;
           left: 0;
-          color: #2c6145;
+          color: #213448;
         }
 
         @media only screen and (max-width: 320px) {

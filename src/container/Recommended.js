@@ -197,13 +197,13 @@ function Recommended(props) {
                     </h2>
                     <div className="d-flex gap-3 mb-md-3 flex-wrap">
                         {categories.map((category, index) => (
-                            <button
-                                key={index}
-                                className={`btn ${selectedCategory === category ? 'btn-success' : 'btn-outline-secondary'}`}
-                                onClick={() => setSelectedCategory(category)}
-                            >
-                                {categoryDisplayNames[category]}
-                            </button>
+                             <button
+                             key={index}
+                             className={`z_category_btn ${selectedCategory === category ? 'z_category_btn_active' : 'z_category_btn_inactive'}`}
+                             onClick={() => setSelectedCategory(category)}
+                         >
+                             {categoryDisplayNames[category]}
+                         </button>
                         ))}
                     </div>
                 </div>

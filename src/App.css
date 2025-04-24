@@ -69,7 +69,7 @@
 .cursor-dot {
   width: 8px;
   height: 8px;
-  background-color: #3BB77E;
+  background-color: #3b7fb7;
   border-radius: 50%;
   position: fixed;
   pointer-events: none;
@@ -81,7 +81,7 @@
 .cursor-outline {
   width: 30px;
   height: 30px;
-  border: 2px solid rgba(59, 183, 126, 0.5);
+  border: 2px solid #3b7fb7 ;
   border-radius: 50%;
   position: fixed;
   pointer-events: none;

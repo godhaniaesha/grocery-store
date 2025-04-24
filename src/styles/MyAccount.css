@@ -42,7 +42,7 @@
 }
 
 .change-photo-btn {
-    color: #01693a;
+    color: #213448;
     background: none;
     border: none;
     font-size: 0.9rem;
@@ -69,7 +69,7 @@
 .edit-btn {
     background: none;
     border: none;
-    color: #01693a;
+    color: #213448;
     font-size: 1.2rem;
     cursor: pointer;
     padding: 0.5rem;
@@ -133,7 +133,7 @@
 
 .form-field input:focus {
     outline: none;
-    border-color: #01693a;
+    border-color: #213448;
     box-shadow: 0 0 0 2px rgba(1, 105, 58, 0.1);
 }
 
@@ -152,7 +152,7 @@
 }
 
 .save-btn {
-    background: #01693a;
+    background: #213448;
     color: white;
     border: none;
 }

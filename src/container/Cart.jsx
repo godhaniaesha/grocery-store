@@ -164,20 +164,20 @@ const styles = {
     backgroundColor: "#f5f5f5",
     border: "none",
     fontSize: "12px",
-    color: "#198754",
+    color: "#213448",
     boxShadow: "0 2px 8px rgba(0, 0, 0, 0.1)",
     transition: "background-color 0.3s",
   },
 
   header: {
-    color: "#198754",
+    color: "#213448",
     fontWeight: "bold",
     fontSize: "1.8rem",
     textTransform: "uppercase",
     letterSpacing: "1px",
   },
   badge: {
-    backgroundColor: "#198754",
+    backgroundColor: "#213448",
     fontSize: "0.75rem",
     marginLeft: "10px",
   },
@@ -197,7 +197,7 @@ const styles = {
     position: "relative",
   },
   selectArrow: {
-    color: "#198754",
+    color: "#213448",
     fontSize: "1.2rem",
   },
   selectDropdown: {
@@ -222,7 +222,7 @@ const styles = {
     backgroundColor: "#f8f9fa",
   },
   toast: {
-    backgroundColor: "#198754",
+    backgroundColor: "#213448",
     color: "#fff",
     padding: "10px 20px",
     borderRadius: "8px",
@@ -389,7 +389,7 @@ const Cart = () => {
                     </Button>
                   </div>
                 </td>
-                <td className="text-success fw-bold">
+                <td className="fw-bold" style={{color:"#213448"}}>
                   ${(item.price * item.quantity).toFixed(2)}
                 </td>
                 <td>
@@ -428,26 +428,28 @@ const Cart = () => {
                 />
               </div>
               <Button
-                variant="outline-success"
+              style={{border:"1px solid #213448", background:"#fff", color:"#213448"}}
+                // variant="outline-success"
                 className="mt-3 w-100"
                 onClick={applyCoupon}
               >
                 Apply Coupon
               </Button>
               {discount > 0 && (
-                <small className="text-success mb-2 d-block">
+                <small className="mb-2 d-block"  style={{ color:"#213448"}}>
                   ✅ Coupon applied: <strong>{discount}%</strong> off!
                 </small>
               )}
               <hr />
               <div className="d-flex justify-content-between mb-3">
                 <strong>Total</strong>
-                <strong className="text-success">${calculateTotal()}</strong>
+                <strong className=""  style={{ color:"#213448"}}>${calculateTotal()}</strong>
               </div>
               <Button
-                variant="success"
+              // style={{backgroundColor:"#213448"}}
+                // variant="success"
                 className="w-100 shadow-sm fw-bold"
-                style={{ borderRadius: "12px" }}
+                style={{ borderRadius: "12px",border:"1px solid #213448", backgroundColor:"#213448" }}
               >
                 Proceed to Checkout
               </Button>

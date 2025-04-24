@@ -68,7 +68,7 @@ const ProductDetail = () => {
           <Row>
             <Col
               className="text-center my-lg-4 my-3"
-              style={{ color: "#2c6145" }}
+              style={{ color: "#213448" }}
             >
               <h1>Product Detail</h1>
             </Col>

@@ -22,7 +22,7 @@ const styles = {
     marginBottom: "20px",
   },
   header: {
-    color: "#198754",
+    color: "#213448",
     fontWeight: "bold",
     fontSize: "1.8rem",
     textTransform: "uppercase",
@@ -34,7 +34,7 @@ const styles = {
     fontSize: "0.9rem",
     fontWeight: "600",
     backgroundColor: "#e8f5e9",
-    color: "#198754",
+    color: "#213448",
     display: "inline-block"
   },
   orderInfo: {
@@ -47,7 +47,7 @@ const styles = {
     padding: "20px",
     borderRadius: "10px",
     backgroundColor: "#fff",
-    border: "1px dashed #198754",
+    border: "1px dashed #213448",
     marginBottom: "20px"
   }
 };
@@ -135,7 +135,7 @@ const Order = () => {
                         <td className="fw-semibold">{item.name}</td>
                         <td>${item.price.toFixed(2)}</td>
                         <td>{item.quantity}</td>
-                        <td className="text-success fw-bold">
+                        <td className="fw-bold" style={{color:'#213448'}}>
                           ${(item.price * item.quantity).toFixed(2)}
                         </td>
                         <td>{orderDetails.orderDate}</td>
@@ -173,7 +173,7 @@ const Order = () => {
               <hr />
               <div className="d-flex justify-content-between mb-3">
                 <strong>Total</strong>
-                <strong className="text-success">
+                <strong style={{color:'#213448'}}>
                   ${(parseFloat(subtotal) * 1.1).toFixed(2)}
                 </strong>
               </div>
@@ -188,9 +188,8 @@ const Order = () => {
           </Card>
 
           <Button
-            variant="success"
             className="w-100 mt-3 shadow-sm fw-bold"
-            style={{ borderRadius: "12px" }}
+            style={{ borderRadius: "12px", backgroundColor: "#213448", border: '1px solid #213448' }}
           >
             Track Order
           </Button>

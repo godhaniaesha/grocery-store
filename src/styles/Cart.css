@@ -7,7 +7,7 @@
 }
 
 .db_cart .cart-title {
-    color: #01693a;
+    color: #213448;
     font-size: 2.5rem;
     font-weight: 700;
     position: relative;
@@ -21,7 +21,7 @@
     left: 0;
     width: 60px;
     height: 4px;
-    background: #01693a;
+    background: #213448;
     border-radius: 2px;
 }
 
@@ -116,7 +116,7 @@
 .db_cart .item-price {
     font-size: 1.4rem;
     font-weight: 700;
-    color: #01693a;
+    color: #213448;
     margin: 1rem 0;
 }
 
@@ -131,7 +131,7 @@
 }
 
 .db_cart .quantity-control button {
-    background: #01693a;
+    background: #213448;
     color: white;
     border: none;
     border-radius: 50%;
@@ -169,7 +169,7 @@
 }
 
 .db_cart .cart-summary h3 {
-    color: #01693a;
+    color: #213448;
     font-size: 1.5rem;
     font-weight: 700;
     margin-bottom: 1.5rem;
@@ -186,7 +186,7 @@
     border-bottom: none;
     font-size: 1.3rem;
     font-weight: 700;
-    color: #01693a;
+    color: #213448;
     margin-top: 1rem;
 }
 
@@ -195,7 +195,7 @@
 .db_cart .apply-btn {
     width: 100%;
     padding: 1rem;
-    background: #01693a;
+    background: #213448;
     border: none;
     border-radius: 25px;
     color: white;
@@ -224,7 +224,7 @@
 
 .db_cart .shipping-calculator h3,.db_cart 
 .coupon-section h3 {
-    color: #01693a;
+    color: #213448;
     font-size: 1.3rem;
     font-weight: 600;
     margin-bottom: 1.5rem;
@@ -240,7 +240,7 @@
 
 .db_cart .form-control:focus,
 .db_cart .form-select:focus {
-    border-color: #01693a;
+    border-color: #213448;
     box-shadow: 0 0 0 0.2rem rgba(1, 105, 58, 0.25);
 }
 
