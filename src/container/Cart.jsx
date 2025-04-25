@@ -126,6 +126,7 @@
 
 // export default Cart;
 import React, { useState } from "react";
+import "../styles/Cart.css"
 import { FaTrashAlt, FaTag, FaLeaf, FaPlus, FaMinus } from "react-icons/fa";
 import {
   Button,
@@ -374,19 +375,21 @@ const Cart = () => {
                 <td>${item.price.toFixed(2)}</td>
                 <td>
                   <div style={styles.quantityButtonmain}>
-                    <Button
+                    <button
                       style={styles.quantityButton}
+                      className="z_button_hoover"
                       onClick={() => updateQuantity(item.id, -1)}
                     >
                       <FaMinus />
-                    </Button>
+                    </button>
                     <span className="mx-2 fw-bold">{item.quantity}</span>
-                    <Button
+                    <button
                       style={styles.quantityButton}
+                      className="z_button_hoover"
                       onClick={() => updateQuantity(item.id, 1)}
                     >
                       <FaPlus />
-                    </Button>
+                    </button>
                   </div>
                 </td>
                 <td className="fw-bold" style={{color:"#213448"}}>
