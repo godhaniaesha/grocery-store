@@ -31,7 +31,7 @@
   .db_card:hover {
     transform: translateY(-5px);
     box-shadow: 0 8px 20px rgba(0, 128, 0, 0.15);
-    border-color: #28a74688;
+    border-color: #8a989e;
   }
   
   .db_card_body {
