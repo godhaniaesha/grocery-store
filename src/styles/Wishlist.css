@@ -3,7 +3,7 @@
 .db_wishlist .db_wishlist_header {
     margin-bottom: 2rem;
     padding-bottom: 1rem;
-    border-bottom: 2px solid #e8f5e9;
+    border-bottom: 2px solid #e9f1f6;
 }
 
 .db_wishlist .db_header_content {
@@ -24,7 +24,7 @@
 .db_wishlist .db_count {
     color: #666;
     font-size: 1rem;
-    background: #e8f5e9;
+    background: #e9f1f6;
     padding: 0.5rem 1rem;
     border-radius: 20px;
 }
@@ -38,7 +38,7 @@
 .db_wishlist .db_wishlist_item {
     position: relative;
     background: #fff;
-    border: 1px solid #e8f5e9;
+    border: 1px solid #e9f1f6;
     border-radius: 12px;
     transition: all 0.3s ease;
     overflow: hidden;

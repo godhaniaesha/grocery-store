@@ -33,7 +33,7 @@ const styles = {
     borderRadius: "20px",
     fontSize: "0.9rem",
     fontWeight: "600",
-    backgroundColor: "#e8f5e9",
+    backgroundColor: "#e9f1f6",
     color: "#213448",
     display: "inline-block"
   },
