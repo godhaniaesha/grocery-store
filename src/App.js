@@ -18,6 +18,7 @@ import Bestseller from './container/Bestseller';
 import WhyUs from './container/WhyUs';
 import Subscribe from './container/Subscribe';
 import Shop from './container/Shop';
+import SliderCaptchaPage from './components/SliderCaptcha';
 
 import ProductDetail from './container/ProductDetail';
 import SimilarProduct from './container/SimilarProduct';
@@ -50,6 +51,7 @@ function App() {
         <Route path="/AboutUs" element={<AboutUs />} />
         <Route path="/ContactUs" element={<ContactUs />} />
         <Route path="/CheckOut" element={<CheckOut />} />
+        <Route path="/slider-captcha" element={<SliderCaptchaPage />} />
 
 
 
