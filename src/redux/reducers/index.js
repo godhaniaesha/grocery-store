@@ -1,11 +1,11 @@
-import React from 'react';
+import { combineReducers } from '@reduxjs/toolkit';
+import categoryReducer from '../slices/Category.slice';
+import subcategoryReducer from '../slices/Category.slice';
 
-function index(props) {
-    return (
-        <div>
-            <h1>gjdjkfh</h1>
-        </div>
-    );
-}
+const rootReducer = combineReducers({
+    category: categoryReducer,
+    subcategory: subcategoryReducer,
+    // Add other reducers here as needed
+});
 
-export default index;
+export default rootReducer;
