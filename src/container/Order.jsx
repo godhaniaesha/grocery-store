@@ -187,12 +187,12 @@ const Order = () => {
             </Card.Body>
           </Card>
 
-          <Button
+          {/* <Button
             className="w-100 mt-3 shadow-sm fw-bold"
             style={{ borderRadius: "12px", backgroundColor: "#213448", border: '1px solid #213448' }}
           >
             Track Order
-          </Button>
+          </Button> */}
         </Col>
       </Row>
     </div>

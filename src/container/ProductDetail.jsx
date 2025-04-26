@@ -66,14 +66,14 @@ const ProductDetail = () => {
       <>
         <Container className="db_product-main product-detail-container">
           <Row>
-            <Col
+            {/* <Col
               className="text-center my-lg-4 my-3"
               style={{ color: "#213448" }}
             >
               <h1>Product Detail</h1>
-            </Col>
+            </Col> */}
           </Row>
-          <Row>
+          <Row className='mt-5'>
             <Col md={6} className="product-images">
               <motion.div
                 className="main-image-container mb-4"
