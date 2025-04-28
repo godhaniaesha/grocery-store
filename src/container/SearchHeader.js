@@ -290,6 +290,9 @@ export default function SearchHeader() {
   const handleLoginSubmit = async (values, { setSubmitting }) => {
     try {
       await dispatch(login(values)).unwrap();
+      console.log('Login successful');
+   
+         
       setShowLoginModal(false);
       toast.success('લૉગિન સફળ રહ્યું!');
     } catch (err) {
@@ -302,9 +305,11 @@ export default function SearchHeader() {
   const handleRegisterSubmit = async (values, { setSubmitting }) => {
     try {
       await dispatch(createUser(values)).unwrap();
+      alert('ddd');
       setShowLoginModal(false);
       toast.success('રજિસ્ટ્રેશન સફળ રહ્યું!');
     } catch (err) {
+      alert('ddd');
       console.error('Registration failed:', err);
       toast.error(err.message || 'રજિસ્ટ્રેશન નિષ્ફળ રહ્યું');
     }
