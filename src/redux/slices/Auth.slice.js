@@ -34,6 +34,7 @@ export const login = createAsyncThunk(
     try {
       const response = await axios.post('http://localhost:4000/api/login', credentials);
       localStorage.setItem('token', response.data.token);
+      localStorage.setItem('UserId',response.data.data.id);
       return response.data;
     } catch (error) {
       if (error.response) {
@@ -128,6 +129,33 @@ export const staticResendOtp = createAsyncThunk(
   }
 );
 
+// Get User By ID
+export const getUserById = createAsyncThunk(
+  'auth/getUserById',
+  async () => {
+    try {
+      const userId = localStorage.getItem('UserId');
+      const token = localStorage.getItem('token');
+      
+      if (!userId || !token) {
+        throw { message: 'Authentication required' };
+      }
+
+      const response = await axios.get(
+        `http://localhost:4000/api/getUser/${userId}`,
+        {
+          headers: {
+            'Authorization': `Bearer ${token}`
+          }
+        }
+      );
+      return response.data;
+    } catch (error) {
+      throw error.response?.data || error;
+    }
+  }
+);
+
 const authSlice = createSlice({
   name: 'auth',
   initialState: {
@@ -137,6 +165,7 @@ const authSlice = createSlice({
     error: null,
     otpSent: false,
     otpVerified: false,
+    userData: null,
   },
   reducers: {
     clearError: (state) => {
@@ -269,6 +298,19 @@ const authSlice = createSlice({
         state.otpSent = true;
       })
       .addCase(staticResendOtp.rejected, (state, action) => {
+        state.loading = false;
+        state.error = action.error.message;
+      })
+
+      // Get User By ID
+      .addCase(getUserById.pending, (state) => {
+        state.loading = true;
+      })
+      .addCase(getUserById.fulfilled, (state, action) => {
+        state.loading = false;
+        state.userData = action.payload.data;
+      })
+      .addCase(getUserById.rejected, (state, action) => {
         state.loading = false;
         state.error = action.error.message;
       });

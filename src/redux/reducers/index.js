@@ -10,6 +10,7 @@ const rootReducer = combineReducers({
     subcategory: subcategoryReducer,
     auth: authReducer,
     product: productReducer,
+    
     // Add other reducers here as needed
 });
 

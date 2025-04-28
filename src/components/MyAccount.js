@@ -1,20 +1,41 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
 import { FaEdit } from 'react-icons/fa';
+import { getUserById } from '../redux/slices/Auth.slice';
 import '../styles/MyAccount.css';
 
 const MyAccount = () => {
+    const dispatch = useDispatch();
+    const userData = useSelector((state) => state.auth);
+    console.log(userData, "userData");
+    
     const [isEditing, setIsEditing] = useState(false);
     const [userInfo, setUserInfo] = useState({
-        firstName: 'Jane',
-        lastName: 'Cooper',
-        email: 'cooper.jane@email.com',
-        phone: '+91 98765 43210',
-        city: 'Ahmedabad',
-        state: 'Gujarat',
-        postcode: '380015',
-        country: 'India',
-        avatar: require("../image/user.jpg")
     });
+
+    useEffect(() => {
+        dispatch(getUserById());
+    }, [dispatch]);
+
+    useEffect(() => {
+        if (userData && userData.userData) {
+            const user = userData.userData;
+            setUserInfo({
+                firstName: user.firstName || '',
+                lastName: user.lastName || '',
+                email: user.email || '',
+                phone: user.phone || '',
+                city: user.city || '',
+                state: user.state || '',
+                postcode: user.postcode || '',
+                country: user.country || '',
+                role: user.role || '',
+                createdAt: new Date(user.createdAt).toLocaleDateString(),
+                updatedAt: new Date(user.updatedAt).toLocaleDateString(),
+                avatar: require("../image/user.jpg")
+            });
+        }
+    }, [userData]);
 
     const handleSubmit = (e) => {
         e.preventDefault();
@@ -91,6 +112,22 @@ const MyAccount = () => {
                                 <div className="info-field">
                                     <label>Country</label>
                                     <p>{userInfo.country}</p>
+                                </div>
+                            </div>
+                            <div className="info-row">
+                                <div className="info-field">
+                                    <label>Role</label>
+                                    <p>{userInfo.role}</p>
+                                </div>
+                                <div className="info-field">
+                                    <label>Member Since</label>
+                                    <p>{userInfo.createdAt}</p>
+                                </div>
+                            </div>
+                            <div className="info-row">
+                                <div className="info-field">
+                                    <label>Last Updated</label>
+                                    <p>{userInfo.updatedAt}</p>
                                 </div>
                             </div>
                         </div>
