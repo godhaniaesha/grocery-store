@@ -5,7 +5,6 @@ import { FaSearch, FaShoppingCart, FaHeart, FaBars, FaTimes, FaUser, FaTimesCirc
 import { BsShop } from 'react-icons/bs';
 import Menuheader from '../components/Menuheader';
 import { toast } from 'react-toastify';
-import { useDispatch, useSelector } from 'react-redux';
 import { getAllCategories } from '../redux/slices/Category.slice';
 import { getAllSubcategories } from '../redux/slices/Subcategory.slice';
 import { fetchAllProducts } from '../redux/slices/Product.slice';
