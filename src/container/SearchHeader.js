@@ -2,6 +2,10 @@ import React, { useState, useRef, useEffect } from "react";
 import { FaSearch, FaShoppingCart, FaHeart, FaBars, FaTimes, FaUser, FaTimesCircle, FaUserAlt, FaSignOutAlt, FaSignInAlt } from 'react-icons/fa';
 import { BsShop } from 'react-icons/bs';
 import Menuheader from '../components/Menuheader';
+import { useDispatch, useSelector } from 'react-redux';
+import { getAllCategories } from '../redux/slices/Category.slice';
+import { getAllSubcategories } from '../redux/slices/Subcategory.slice';
+import { fetchAllProducts } from '../redux/slices/Product.slice';
 
 import '../styles/x_app.css'
 import { GrFormClose } from 'react-icons/gr';
@@ -19,9 +23,59 @@ export default function SearchHeader() {
   const toggleMobileSearch = () => {
     setShowMobileSearch(!showMobileSearch);
   };
+
   const [open, setOpen] = useState(false);
   const [active, setActive] = useState("All Categories");
   const [showDropdown, setShowDropdown] = useState(null);
+  const dispatch = useDispatch();
+
+  // Get data from Redux store with default values
+  const { categories: storeCategories = [], loading: categoriesLoading } = useSelector((state) => state.category || {});
+  const { subcategories = [], loading: subcategoriesLoading } = useSelector((state) => state.subcategory || {});
+
+  // Debug logs
+  useEffect(() => {
+    console.log('=== REDUX STORE DATA ===');
+    console.log('Categories:', storeCategories);
+    console.log('Subcategories:', subcategories);
+  }, [storeCategories, subcategories]);
+
+  // Fetch data when component mounts
+  useEffect(() => {
+    const token = localStorage.getItem('token');
+    if (token) {
+      try {
+        console.log('=== FETCHING DATA ===');
+        dispatch(getAllCategories());
+        dispatch(getAllSubcategories());
+      } catch (error) {
+        console.error('Error fetching data:', error);
+      }
+    } else {
+      console.log('User not logged in');
+    }
+  }, [dispatch]);
+
+  // Combine categories with their subcategories
+  const categoriesWithSubcategories = React.useMemo(() => {
+    if (!storeCategories?.length) {
+      console.log('No categories found');
+      return [];
+    }
+
+    return storeCategories.map(category => {
+      const categorySubcategories = subcategories.filter(sub => sub.categoryId === category.id);
+      console.log(`Category ${category.categoryName} subcategories:`, categorySubcategories);
+      
+      return {
+        ...category,
+        subcategories: categorySubcategories
+      };
+    });
+  }, [storeCategories, subcategories]);
+
+  // Add loading state handling
+  const isLoading = categoriesLoading || subcategoriesLoading;
 
   const dropdownRef = useRef(null);
 
@@ -96,368 +150,6 @@ export default function SearchHeader() {
     setCurrentView('login');
   };
 
-  const menuData = {
-    "Grains & Pulses": {
-      "Whole Pulses": [
-        "Moong Whole",
-        "Chana Whole",
-        "Urad Whole",
-        "Masoor Whole",
-        "Rajma",
-        "Kabuli Chana"
-      ],
-      "Split Pulses": [
-        "Moong Dal",
-        "Chana Dal",
-        "Toor Dal (Arhar)",
-        "Urad Dal",
-        "Masoor Dal"
-      ],
-      "Organic Pulses": [
-        "Organic Moong Dal",
-        "Organic Chana Dal",
-        "Organic Toor Dal",
-        "Organic Masoor Dal"
-      ],
-      "Other Pulses": [
-        "Horse Gram",
-        "Lobia (Black Eyed Beans)",
-        "Soybean",
-        "Green Peas",
-        "Black Chickpeas"
-      ],
-      "Grains": [
-        "Wheat",
-        "Rice",
-        "Jowar",
-        "Bajra",
-        "Ragi",
-        "Barley"
-      ],
-      "Organic Grains": [
-        "Organic Wheat",
-        "Organic Rice",
-        "Organic Bajra",
-        "Organic Jowar"
-      ],
-      "Ready to Cook Pulses": [
-        "Sprouted Pulses Mix",
-        "Soaked & Packed Pulses"
-      ]
-    },
-    "Oil & Ghee": {
-      "Ghee": [
-        "Cow Ghee",
-        "Desi Ghee"
-      ],
-      "Oil": [
-        "Sunflower Oil",
-        "Coconut Oil",
-        "Groundnut Oil",
-        "Soyabean Oil",
-        "Rice Bran Oil",
-        "Mustard Oil",
-        "Olive Oil",
-        "Canola Oil",
-        "Blended Oil",
-        "Sesame Oil",
-        "Corn Oil"
-      ],
-      "Vanaspati & Dalda": [
-        "Vanaspati",
-        "Dalda"
-      ],
-      "Butter & Cream": [
-        "White Butter",
-        "Table Butter",
-        "Fresh Cream"
-      ],
-      "Organic Oils": [
-        "Organic Coconut Oil",
-        "Organic Mustard Oil"
-      ],
-      "Cooking Sprays": [
-        "Olive Oil Spray",
-        "Butter Spray"
-      ]
-    },
-    "Spices & Masala": {
-      "Whole Spices": [
-        "Cumin",
-        "Coriander",
-        "Cardamom",
-        "Cloves",
-        "Cinnamon",
-        "Bay Leaves",
-        "Black Pepper"
-      ],
-      "Powder Spices": [
-        "Turmeric Powder",
-        "Red Chilli Powder",
-        "Coriander Powder",
-        "Cumin Powder",
-        "Garam Masala"
-      ],
-      "Blended Spices": [
-        "Kitchen King Masala",
-        "Sabzi Masala",
-        "Pav Bhaji Masala",
-        "Chhole Masala",
-        "Biryani Masala",
-        "Tea Masala"
-      ],
-      "Hing": [
-        "Compounded Hing",
-        "Raw Hing"
-      ],
-      "Cooking Pastes": [
-        "Ginger Garlic Paste",
-        "Garlic Paste",
-        "Ginger Paste"
-      ],
-      "Herbs & Seasonings": [
-        "Oregano",
-        "Chili Flakes",
-        "Mixed Herbs",
-        "Curry Leaves",
-        "Kasuri Methi"
-      ],
-      "Food Colour & Flavours": [
-        "Food Colour",
-        "Kesar",
-        "Essences",
-        "Flavoring Agents"
-      ]
-    },
-    "Dairy & Bakery": {
-      "Dairy": [
-        "Milk",
-        "Curd",
-        "Paneer",
-        "Butter",
-        "Cheese",
-        "Flavoured Milk",
-        "Cream",
-        "Buttermilk & Lassi",
-        "Condensed, Powdered Milk"
-      ],
-      "Bakery": [
-        "Bread",
-        "Buns & Pav",
-        "Pizza Base & Kulcha",
-        "Cake",
-        "Pastries",
-        "Brownie",
-        "Donuts"
-      ],
-      "Cookies & Rusk": [
-        "Cookies",
-        "Cream Biscuits",
-        "Glucose & Marie",
-        "Health Biscuits",
-        "Rusk"
-      ],
-      "Bakery Snacks": [
-        "Khari & Toast",
-        "Bakery Namkeen",
-        "Puffs & Rolls"
-      ],
-      "Frozen Desserts": [
-        "Ice Cream",
-        "Kulfi",
-        "Frozen Yogurt"
-      ]
-    },
-    "Fruits & Vegetables": {
-      "Fresh Vegetables": [
-        "Potato",
-        "Onion",
-        "Tomato",
-        "Green Chilli",
-        "Carrot",
-        "Beetroot",
-        "Cucumber",
-        "Lady Finger",
-        "Brinjal",
-        "Bitter Gourd",
-        "Bottle Gourd",
-        "Cabbage",
-        "Cauliflower",
-        "Spinach",
-        "Coriander Leaves",
-        "Drumstick"
-      ],
-      "Fresh Fruits": [
-        "Banana",
-        "Apple",
-        "Papaya",
-        "Orange",
-        "Mosambi",
-        "Guava",
-        "Grapes",
-        "Pomegranate",
-        "Watermelon",
-        "Mango",
-        "Chikoo",
-        "Pear",
-        "Kiwi",
-        "Pineapple"
-      ],
-      "Exotic Vegetables": [
-        "Broccoli",
-        "Zucchini",
-        "Lettuce",
-        "Bell Peppers",
-        "Avocado",
-        "Asparagus",
-        "Celery"
-      ],
-      "Organic Vegetables": [
-        "Organic Tomato",
-        "Organic Carrot",
-        "Organic Potato",
-        "Organic Greens"
-      ],
-      "Organic Fruits": [
-        "Organic Banana",
-        "Organic Apple",
-        "Organic Papaya"
-      ],
-      "Cut & Peeled": [
-        "Cut Fruits",
-        "Cut Vegetables",
-        "Vegetable Mixes"
-      ],
-      "Herbs & Leaves": [
-        "Coriander",
-        "Mint",
-        "Curry Leaves",
-        "Lemongrass",
-        "Tulsi"
-      ],
-      "Sprouts & Microgreens": [
-        "Moong Sprouts",
-        "Mixed Sprouts",
-        "Microgreens"
-      ]
-    },
-    "Beverages": {
-      "Tea & Coffee": [
-        "Green Tea",
-        "Black Tea",
-        "Herbal Tea",
-        "Tea Bags",
-        "Instant Coffee",
-        "Ground Coffee",
-        "Coffee Beans"
-      ],
-      "Fruit Juices": [
-        "Orange Juice",
-        "Apple Juice",
-        "Mixed Fruit Juice",
-        "Mango Juice"
-      ],
-      "Soft Drinks": [
-        "Cola",
-        "Lemon Drink",
-        "Soda",
-        "Tonic Water"
-      ],
-      "Energy & Sports Drinks": [
-        "Energy Drinks",
-        "Electrolyte Drinks"
-      ],
-      "Health Drinks & Supplements": [
-        "Protein Powders",
-        "Nutritional Supplements",
-        "Kids Health Drinks"
-      ],
-      "Syrups & Concentrates": [
-        "Rose Syrup",
-        "Lemon Syrup",
-        "Squash & Fruit Concentrates"
-      ],
-      "Flavoured & Packaged Water": [
-        "Flavoured Water",
-        "Mineral Water",
-        "Sparkling Water"
-      ],
-      "Milk Based Drinks": [
-        "Flavoured Milk",
-        "Soy Milk",
-        "Almond Milk"
-      ],
-      "Cold Pressed Juices": [
-        "Cold Pressed Apple Juice",
-        "Cold Pressed Mixed Fruit Juice"
-      ]
-    },
-    "Snacks & Packaged Foods": {
-      "Chips & Namkeen": [
-        "Potato Chips",
-        "Banana Chips",
-        "Corn Chips",
-        "Masala Snacks",
-        "Namkeen Mix"
-      ],
-      "Biscuits & Cookies": [
-        "Cream Biscuits",
-        "Crunchy Biscuits",
-        "Cookies",
-        "Gluten-Free Biscuits"
-      ],
-      "Ready to Eat": [
-        "Instant Noodles",
-        "Curry & Rice",
-        "Porridge & Oats",
-        "Pasta"
-      ],
-      "Sweets & Chocolates": [
-        "Candies",
-        "Lollipops",
-        "Milk Sweets",
-        "Chocolate Bars"
-      ],
-      "Dry Fruits & Nuts": [
-        "Almonds",
-        "Cashews",
-        "Raisins",
-        "Pistachios",
-        "Walnuts"
-      ],
-      "Frozen Foods": [
-        "Frozen Vegetables",
-        "Frozen Parathas",
-        "Frozen Snacks"
-      ],
-      "Fruit Juices & Drinks": [
-        "Fruit Juices",
-        "Soft Drinks",
-        "Fruit Pulps"
-      ],
-      "Tea & Coffee": [
-        "Tea",
-        "Green Tea",
-        "Instant Coffee",
-        "Ground Coffee"
-      ],
-      "Pickles & Sauces": [
-        "Mango Pickle",
-        "Mixed Pickles",
-        "Chili Sauce",
-        "Tomato Ketchup"
-      ],
-      "Health Snacks": [
-        "Granola Bars",
-        "Protein Bars",
-        "Seed Mixes",
-        "Dry Fruits"
-      ]
-    },
-  };
-
-  const categories = Object.keys(menuData);
-
   // Replace single count with an object to track counts for each item
   const [itemCounts, setItemCounts] = useState({});
 
@@ -491,30 +183,32 @@ export default function SearchHeader() {
   };
 
   const renderDropdown = (category) => {
-    if (!menuData[category]) return null;
+    const categoryData = categoriesWithSubcategories.find(cat => cat.categoryName === category);
+    if (!categoryData) return null;
+
+    console.log('Rendering dropdown for category:', categoryData.categoryName);
+    console.log('Subcategories:', categoryData.subcategories);
 
     return (
       <div className="x_mega_dropdown">
-        {Object.entries(menuData[category]).map(([title, items]) => (
-          <div key={title} className="x_dropdown_section">
-            <h3 className="x_dropdown_title">{title}</h3>
-            <ul className="x_dropdown_list">
-              {items.map((item, index) => (
-                <li
-                  key={index}
-                  className="x_dropdown_item"
-                  onClick={(e) => {
-                    e.stopPropagation();
-                    setActive("All Categories");
-                    setShowDropdown(null);
-                  }}
-                >
-                  {item}
-                </li>
-              ))}
-            </ul>
-          </div>
-        ))}
+        <div className="x_dropdown_section">
+          <h3 className="x_dropdown_title">{categoryData.categoryName}</h3>
+          <ul className="x_dropdown_list">
+            {categoryData.subcategories.map((subcat, index) => (
+              <li
+                key={index}
+                className="x_dropdown_item"
+                onClick={(e) => {
+                  e.stopPropagation();
+                  setActive("All Categories");
+                  setShowDropdown(null);
+                }}
+              >
+                {subcat.subcategoryName}
+              </li>
+            ))}
+          </ul>
+        </div>
       </div>
     );
   };
@@ -756,31 +450,60 @@ export default function SearchHeader() {
           <div className="x_nav_container" ref={dropdownRef}>
             <div className="x_sticky_category">
               <div
-                className={`x_nav_item ${active === "All Categories" ? "x_active" : ""
-                  }`}
+                className={`x_nav_item ${active === "All Categories" ? "x_active" : ""}`}
                 onClick={() => handleItemClick("All Categories")}
               >
                 All Categories
               </div>
             </div>
             <ul className="x_nav_list">
-              {categories.map((item) => (
-                <li
-                  key={item}
-                  className={`x_nav_item ${active === item ? "x_active" : ""}`}
-                  data-category={item}
-                  onClick={() => handleItemClick(item)}
-                >
-                  <div className="x_nav_item_content">
-                    {item}
-                    <IoIosArrowDown
-                      className={`x_arrow ${active === item ? "x_arrow_up" : ""
-                        }`}
-                    />
-                  </div>
-                  {active === item && renderDropdown(item)}
-                </li>
-              ))}
+              {isLoading ? (
+                <li className="x_nav_item">Loading...</li>
+              ) : (
+                categoriesWithSubcategories.map((category) => {
+                  console.log('Rendering category:', category.categoryName);
+                  return (
+                    <li
+                      key={category._id}
+                      className={`x_nav_item ${active === category.categoryName ? "x_active" : ""}`}
+                      data-category={category.categoryName}
+                      onClick={() => handleItemClick(category.categoryName)}
+                    >
+                      <div className="x_nav_item_content">
+                        {category.categoryName}
+                        <IoIosArrowDown
+                          className={`x_arrow ${active === category.categoryName ? "x_arrow_up" : ""}`}
+                        />
+                      </div>
+                      {active === category.categoryName && (
+                        <div className="x_mega_dropdown">
+                          <div className="x_dropdown_section">
+                            <h3 className="x_dropdown_title">{category.categoryName}</h3>
+                            <ul className="x_dropdown_list">
+                              {category.subcategories.map((subcat, index) => {
+                                console.log('Rendering subcategory:', subcat.subcategoryName);
+                                return (
+                                  <li
+                                    key={index}
+                                    className="x_dropdown_item"
+                                    onClick={(e) => {
+                                      e.stopPropagation();
+                                      setActive("All Categories");
+                                      setShowDropdown(null);
+                                    }}
+                                  >
+                                    {subcat.subcategoryName}
+                                  </li>
+                                );
+                              })}
+                            </ul>
+                          </div>
+                        </div>
+                      )}
+                    </li>
+                  );
+                })
+              )}
             </ul>
           </div>
         </nav>
@@ -792,55 +515,47 @@ export default function SearchHeader() {
           <div className="x_offcanvas_content">
             <ul className="x_mobile_menu">
               <li
-                className={`x_mobile_item ${active === "All Categories" ? "x_active" : ""
-                  }`}
+                className={`x_mobile_item ${active === "All Categories" ? "x_active" : ""}`}
                 onClick={() => handleItemClick("All Categories")}
               >
                 All Categories
               </li>
-              {categories.map((category) => (
-                // Update the mobile menu click handler
+              {categoriesWithSubcategories.map((category) => (
                 <li
-                  key={category}
-                  className={`x_mobile_item ${active === category ? "x_active" : ""
-                    }`}
+                  key={category._id}
+                  className={`x_mobile_item ${active === category.categoryName ? "x_active" : ""}`}
                   onClick={(e) => {
                     e.preventDefault();
                     e.stopPropagation();
-                    handleItemClick(category);
+                    handleItemClick(category.categoryName);
                   }}
                 >
                   <div className="x_mobile_item_header">
-                    {category}
+                    {category.categoryName}
                     <IoIosArrowDown
-                      className={`x_arrow ${active === category ? "x_arrow_up" : ""
-                        }`}
+                      className={`x_arrow ${active === category.categoryName ? "x_arrow_up" : ""}`}
                     />
                   </div>
-                  {showDropdown === category && ( // Changed this condition
+                  {showDropdown === category.categoryName && (
                     <div className="x_mobile_submenu">
-                      {Object.entries(menuData[category]).map(
-                        ([title, items]) => (
-                          <div key={title} className="x_mobile_section">
-                            <h3 className="x_mobile_title">{title}</h3>
-                            <ul className="x_mobile_list">
-                              {items.map((item, index) => (
-                                <li
-                                  key={index}
-                                  className="x_mobile_subitem"
-                                  onClick={(e) => {
-                                    e.stopPropagation();
-                                    setActive("All Categories");
-                                    setOpen(false);
-                                  }}
-                                >
-                                  {item}
-                                </li>
-                              ))}
-                            </ul>
-                          </div>
-                        )
-                      )}
+                      <div className="x_mobile_section">
+                        <h3 className="x_mobile_title">{category.categoryName}</h3>
+                        <ul className="x_mobile_list">
+                          {category.subcategories.map((subcat, index) => (
+                            <li
+                              key={index}
+                              className="x_mobile_subitem"
+                              onClick={(e) => {
+                                e.stopPropagation();
+                                setActive("All Categories");
+                                setOpen(false);
+                              }}
+                            >
+                              {subcat.subcategoryName}
+                            </li>
+                          ))}
+                        </ul>
+                      </div>
                     </div>
                   )}
                 </li>

@@ -23,10 +23,22 @@ export const getAllCategories = createAsyncThunk(
   'category/getAllCategories',
   async () => {
     try {
-      const response = await axios.get('http://localhost:4000/api/getAllCategories');
+      const token = localStorage.getItem('token');
+      if (!token) {
+        throw new Error('No authorization token found');
+      }
+
+      const response = await axios.get('http://localhost:4000/api/AllCategory', {
+        headers: {
+          'Authorization': `Bearer ${token}`
+        }
+      });
+      
+      console.log('Category API Response:', response.data);
       return response.data;
     } catch (error) {
-      throw error.response.data;
+      console.error('Category API Error:', error);
+      throw error.response?.data || error.message;
     }
   }
 );
@@ -119,11 +131,20 @@ const categorySlice = createSlice({
       // Get All Categories
       .addCase(getAllCategories.pending, (state) => {
         state.loading = true;
+        state.error = null;
       })
       .addCase(getAllCategories.fulfilled, (state, action) => {
         state.loading = false;
-        state.categories = action.payload.data;
-        state.totalCategories = action.payload.totalCategory;
+        if (action.payload.success) {
+          // Ensure each category has a subcategories array
+          state.categories = action.payload.data.map(category => ({
+            ...category,
+            subcategories: category.subcategories || []
+          }));
+          state.totalCategories = action.payload.totalCategory || 0;
+        } else {
+          state.error = action.payload.message || 'Failed to fetch categories';
+        }
       })
       .addCase(getAllCategories.rejected, (state, action) => {
         state.loading = false;
