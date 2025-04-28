@@ -1,7 +1,10 @@
 import React, { useState, useRef, useEffect } from "react";
+import { useDispatch, useSelector } from 'react-redux';
+import { createUser, login, generateOtp, verifyOtp, verifyGeneratedOtp } from '../redux/slices/Auth.slice';
 import { FaSearch, FaShoppingCart, FaHeart, FaBars, FaTimes, FaUser, FaTimesCircle, FaUserAlt, FaSignOutAlt, FaSignInAlt } from 'react-icons/fa';
 import { BsShop } from 'react-icons/bs';
 import Menuheader from '../components/Menuheader';
+import { toast } from 'react-toastify';
 
 import '../styles/x_app.css'
 import { GrFormClose } from 'react-icons/gr';
@@ -13,6 +16,8 @@ import { FiShoppingBag } from "react-icons/fi";
 import { Link } from "react-router-dom";
 
 export default function SearchHeader() {
+  const dispatch = useDispatch();
+  const { loading, error, otpSent, otpVerified } = useSelector(state => state.auth);
   const [showMobileSearch, setShowMobileSearch] = useState(false);
   const [searchQuery, setSearchQuery] = useState('');
 
@@ -78,22 +83,34 @@ export default function SearchHeader() {
     setCurrentView('forgot');
   };
 
-  const handleEmailSubmit = (e) => {
+  const handleEmailSubmit = async (e) => {
     e.preventDefault();
-    // Here you would typically make an API call to send OTP
-    setCurrentView('otp');
+    try {
+      await dispatch(generateOtp(email)).unwrap();
+      setCurrentView('otp');
+    } catch (err) {
+      console.error('OTP generation failed:', err);
+    }
   };
 
-  const handleOtpSubmit = (e) => {
+  const handleOtpSubmit = async (e) => {
     e.preventDefault();
-    // Here you would typically verify the OTP
-    setCurrentView('new-password');
+    try {
+      await dispatch(verifyOtp({ mobileNumber: email, otp })).unwrap();
+      setCurrentView('new-password');
+    } catch (err) {
+      console.error('OTP verification failed:', err);
+    }
   };
 
-  const handleNewPasswordSubmit = (e) => {
+  const handleNewPasswordSubmit = async (e) => {
     e.preventDefault();
-    // Here you would typically update the password
-    setCurrentView('login');
+    try {
+      await dispatch(verifyGeneratedOtp({ mobileNumber: email, otp })).unwrap();
+      setCurrentView('login');
+    } catch (err) {
+      console.error('Password update failed:', err);
+    }
   };
 
   const menuData = {
@@ -578,36 +595,63 @@ export default function SearchHeader() {
   });
 
   // Form submit handlers
-  const handleLoginSubmit = (values, { setSubmitting }) => {
-    console.log('Login values:', values);
-    // Add your login logic here
+  const handleLoginSubmit = async (values, { setSubmitting }) => {
+    try {
+      await dispatch(login(values)).unwrap();
+      setShowLoginModal(false);
+      toast.success('લૉગિન સફળ રહ્યું!');
+    } catch (err) {
+      console.error('Login failed:', err);
+      toast.error(err.message || 'લૉગિન નિષ્ફળ રહ્યું');
+    }
     setSubmitting(false);
   };
 
-  const handleRegisterSubmit = (values, { setSubmitting }) => {
-    console.log('Register values:', values);
-    // Add your registration logic here
+  const handleRegisterSubmit = async (values, { setSubmitting }) => {
+    try {
+      await dispatch(createUser(values)).unwrap();
+      setShowLoginModal(false);
+      toast.success('રજિસ્ટ્રેશન સફળ રહ્યું!');
+    } catch (err) {
+      console.error('Registration failed:', err);
+      toast.error(err.message || 'રજિસ્ટ્રેશન નિષ્ફળ રહ્યું');
+    }
     setSubmitting(false);
   };
 
-  const handleForgotSubmit = (values, { setSubmitting }) => {
-    console.log('Forgot password values:', values);
-    // Add your forgot password logic here
-    setCurrentView('otp');
+  const handleForgotSubmit = async (values, { setSubmitting }) => {
+    try {
+      await dispatch(generateOtp(values.email)).unwrap();
+      setCurrentView('otp');
+      toast.success('OTP મોકલવામાં આવ્યો છે');
+    } catch (err) {
+      console.error('Forgot password failed:', err);
+      toast.error(err.message || 'OTP મોકલવામાં નિષ્ફળ રહ્યું');
+    }
     setSubmitting(false);
   };
 
-  const handleOtpVerification = (values, { setSubmitting }) => {
-    console.log('OTP values:', values);
-    // Add your OTP verification logic here
-    setCurrentView('new-password');
+  const handleOtpVerification = async (values, { setSubmitting }) => {
+    try {
+      await dispatch(verifyOtp({ email, otp: values.otp })).unwrap();
+      setCurrentView('new-password');
+      toast.success('OTP ચકાસણી સફળ રહી');
+    } catch (err) {
+      console.error('OTP verification failed:', err);
+      toast.error(err.message || 'OTP ચકાસણી નિષ્ફળ રહી');
+    }
     setSubmitting(false);
   };
 
-  const handlePasswordUpdate = (values, { setSubmitting }) => {
-    console.log('New password values:', values);
-    // Add your password update logic here
-    setCurrentView('login');
+  const handlePasswordUpdate = async (values, { setSubmitting }) => {
+    try {
+      await dispatch(verifyGeneratedOtp({ email, otp, newPassword: values.password })).unwrap();
+      setCurrentView('login');
+      toast.success('પાસવર્ડ સફળતાપૂર્વક અપડેટ થયો');
+    } catch (err) {
+      console.error('Password update failed:', err);
+      toast.error(err.message || 'પાસવર્ડ અપડેટ નિષ્ફળ રહ્યું');
+    }
     setSubmitting(false);
   };
 
@@ -872,6 +916,18 @@ export default function SearchHeader() {
                         >
                           {({ errors, touched, values, handleChange, handleBlur, isSubmitting }) => (
                             <Form>
+                              {error && (
+                                <div className="alert alert-danger" role="alert">
+                                  {error}
+                                </div>
+                              )}
+                              {loading && (
+                                <div className="text-center mb-3">
+                                  <div className="spinner-border text-primary" role="status">
+                                    <span className="visually-hidden">Loading...</span>
+                                  </div>
+                                </div>
+                              )}
                               <div className="form-group">
                                 <input
                                   type="email"
@@ -940,6 +996,18 @@ export default function SearchHeader() {
                         >
                           {({ errors, touched, values, handleChange, handleBlur, isSubmitting }) => (
                             <Form>
+                              {error && (
+                                <div className="alert alert-danger" role="alert">
+                                  {error}
+                                </div>
+                              )}
+                              {loading && (
+                                <div className="text-center mb-3">
+                                  <div className="spinner-border text-primary" role="status">
+                                    <span className="visually-hidden">Loading...</span>
+                                  </div>
+                                </div>
+                              )}
                               <div className="form-group">
                                 <input
                                   type="email"
@@ -982,6 +1050,18 @@ export default function SearchHeader() {
                         >
                           {({ errors, touched, values, handleChange, handleBlur, isSubmitting }) => (
                             <Form>
+                              {error && (
+                                <div className="alert alert-danger" role="alert">
+                                  {error}
+                                </div>
+                              )}
+                              {loading && (
+                                <div className="text-center mb-3">
+                                  <div className="spinner-border text-primary" role="status">
+                                    <span className="visually-hidden">Loading...</span>
+                                  </div>
+                                </div>
+                              )}
                               <div className="form-group">
                                 <input
                                   type="text"
@@ -1033,6 +1113,18 @@ export default function SearchHeader() {
                         >
                           {({ errors, touched, values, handleChange, handleBlur, isSubmitting }) => (
                             <Form>
+                              {error && (
+                                <div className="alert alert-danger" role="alert">
+                                  {error}
+                                </div>
+                              )}
+                              {loading && (
+                                <div className="text-center mb-3">
+                                  <div className="spinner-border text-primary" role="status">
+                                    <span className="visually-hidden">Loading...</span>
+                                  </div>
+                                </div>
+                              )}
                               <div className="form-group password-group">
                                 <input
                                   type={showPassword ? "text" : "password"}
@@ -1104,6 +1196,18 @@ export default function SearchHeader() {
                         >
                           {({ errors, touched, values, handleChange, handleBlur, isSubmitting }) => (
                             <Form>
+                              {error && (
+                                <div className="alert alert-danger" role="alert">
+                                  {error}
+                                </div>
+                              )}
+                              {loading && (
+                                <div className="text-center mb-3">
+                                  <div className="spinner-border text-primary" role="status">
+                                    <span className="visually-hidden">Loading...</span>
+                                  </div>
+                                </div>
+                              )}
                               <div className="form-group">
                                 <input
                                   type="text"
